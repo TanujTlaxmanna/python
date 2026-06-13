@@ -241,61 +241,86 @@ import pandas as pd
 
 # MERGING DATAFRAMES
 
-var1 = pd.DataFrame({"A" : [1,2,3,4],
-                     "B" : [11,12,13,14]})
-var2 = pd.DataFrame({"A" : [1,2,3,4],
-                     "C" : [91,25,53,41]})
+# var1 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "B" : [11,12,13,14]})
+# var2 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "C" : [91,25,53,41]})
 
-print(var1)
-print(var2, "\n")
-print(pd.merge(var1, var2, on = "A"))
-print(pd.merge(var2, var1, on = "A"))
+# print(var1)
+# print(var2, "\n")
+# print(pd.merge(var1, var2, on = "A"))
+# print(pd.merge(var2, var1, on = "A"))
 
-var3 = pd.DataFrame({"A" : [1,2,3,4],
-                     "B" : [11,12,13,14]})
-var4 = pd.DataFrame({"A" : [1,2,3,44],
-                     "C" : [91,25,53,41]})
+# var3 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "B" : [11,12,13,14]})
+# var4 = pd.DataFrame({"A" : [1,2,3,44],
+#                      "C" : [91,25,53,41]})
 
-print(pd.merge(var3, var4, on = "A"))
-print(pd.merge(var4, var3, on = "A"))
+# print(pd.merge(var3, var4, on = "A"))
+# print(pd.merge(var4, var3, on = "A"))
 
 # acts like joints from sql - left, right, outer, inner
-pd.merge(var3, var4, how = "outer")  #left prints all value in var 3 and puts nan in var 4 where value is not there, right does the same with var 4 and var 3, outer will make union and print all teh valeus and nan in missing places , inner will find intersection points and print only common points 
+# pd.merge(var3, var4, how = "outer")  #left prints all value in var 3 and puts nan in var 4 where value is not there, right does the same with var 4 and var 3, outer will make union and print all teh valeus and nan in missing places , inner will find intersection points and print only common points 
 
-pd.merge(var3, var4, how= "outer", indicator= True) #shows what data are missing and what are present - both, left_only, right_only
+# pd.merge(var3, var4, how= "outer", indicator= True) #shows what data are missing and what are present - both, left_only, right_only
 
-var1 = pd.DataFrame({"A" : [1,2,3,4],
-                     "B" : [11,12,13,14]})
-var2 = pd.DataFrame({"A" : [1,2,3,4],
-                     "B" : [91,25,53,41]})
-pd.merge(var1, var2, left_index= True, right_index= True) #Normally since both A and B are common we wont get a table, but with left and right index we will get the data in form of ax, bx, ay, by
-pd.merge(var1, var2, left_index= True, right_index= True, suffixes = ("names", "id")) #gives suffixes and replaces ax, bx with names and ay, by with id
+# var1 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "B" : [11,12,13,14]})
+# var2 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "B" : [91,25,53,41]})
+# pd.merge(var1, var2, left_index= True, right_index= True) #Normally since both A and B are common we wont get a table, but with left and right index we will get the data in form of ax, bx, ay, by
+# pd.merge(var1, var2, left_index= True, right_index= True, suffixes = ("names", "id")) #gives suffixes and replaces ax, bx with names and ay, by with id
 
 # COCNCAT
 
-sr1 = pd.Series([1,2,3,4])
-sr2 = pd.Series([11,21,31,41])
+# sr1 = pd.Series([1,2,3,4])
+# sr2 = pd.Series([11,21,31,41])
 
-sr1
-sr2
+# sr1
+# sr2
 
-pd.concat([sr1, sr2]) #concats series 1 and series 2
-pd.concat([var1, var2]) #concates dict1 and dict2, this does not care about common parts
-pd.concat([var1, var2], axis = 1) #column wise
-pd.concat([var1, var2], axis = 0) #rowwise, default
+# pd.concat([sr1, sr2]) #concats series 1 and series 2
+# pd.concat([var1, var2]) #concates dict1 and dict2, this does not care about common parts
+# pd.concat([var1, var2], axis = 1) #column wise
+# pd.concat([var1, var2], axis = 0) #rowwise, default
 
 
-var1 = pd.DataFrame({"A" : [1,2,3,4],
-                     "B" : [11,12,13,14]})
-var2 = pd.DataFrame({"A" : [1,2],
-                     "B" : [91,25,53,41]})
+# var1 = pd.DataFrame({"A" : [1,2,3,4],
+#                      "B" : [11,12,13,14]})
+# var2 = pd.DataFrame({"A" : [1,2],
+#                      "B" : [91,25,53,41]})
 
-pd.concat([var1, var2], axis = 1) #this will concat both dicts and show nan in missing places
-pd.concat([var1, var2], axis = 1, join = "inner") #will not show missing data
-pd.concat([var1, var2], axis = 0, join = "inner" , keys = ["A", "B"]) #gives title and shows blocks of merges
+# pd.concat([var1, var2], axis = 1) #this will concat both dicts and show nan in missing places
+# pd.concat([var1, var2], axis = 1, join = "inner") #will not show missing data
+# pd.concat([var1, var2], axis = 0, join = "inner" , keys = ["A", "B"]) #gives title and shows blocks of merges
 
-var1 = pd.DataFrame({"A" : [1,2,3,4]})
-var2 = pd.DataFrame({"B" : [1,2],
-                     "C" : [91,25,53,41]})
+# var1 = pd.DataFrame({"A" : [1,2,3,4]})
+# var2 = pd.DataFrame({"B" : [1,2],
+#                      "C" : [91,25,53,41]})
 
-pd.concat([var1, var2]) #This will also merge and show nan in missing places
+# pd.concat([var1, var2]) #This will also merge and show nan in missing places
+
+
+# GROUP BY
+
+var = pd.DataFrame({
+    "name" : ["a", "b", "c", "d", "a", "a", "b", "a", "c", "c", "a"],
+    "subject1" : [12, 13, 14, 12, 14, 15, 23, 25, 16, 23, 13],
+    "subject2" : [23,12,12,14,15,23,19,10,23,25,12]
+})
+
+var
+
+var_New = var.groupby("name") #grouping/ arranging by name column
+
+for x,y in var_New : 
+    print(x)
+    print(y, "\n")
+
+print(var_New.get_group("a")) #printing singular groups
+
+var_New.min() #min value of s1 and s2
+var_New.max()  #max value of s1 and s2
+var_New.mean() #mean of s1 and s2
+
+li = list(var_New) #converting to list
