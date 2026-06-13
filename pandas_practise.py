@@ -118,30 +118,70 @@ import pandas as pd
 
 # CREATING CSV FILES USING PANDAS
 
+# p = pd.DataFrame({"A" : [1,2,3,4,5,6],
+#                   "B" : [1,2,3,4,5,6],
+#                   "C" : [1,2,3,4,5,6]})
+# print(p)
+
+# p.to_csv("Test_new.csv", index= False)
+
+# csv_1 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv")
+# print(csv_1)
+
+
+# csv_2 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", nrows=5, usecols= [0, 1]) #or ["A", "B"]
+# print(csv_2)
+# print(type(csv_2))
+
+# csv_3 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", skiprows= [0])
+# print(csv_3)
+
+# csv_4 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", index_col= "A")
+# print(csv_4)
+
+
+# csv_5 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", header= 4)
+# print(csv_5)
+
+# csv_6 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", names= ["Col"], dtype={"C" : "float"})
+# print(csv_6)
+
+
+# Pandas Functions
+
 p = pd.DataFrame({"A" : [1,2,3,4,5,6],
                   "B" : [1,2,3,4,5,6],
                   "C" : [1,2,3,4,5,6]})
-print(p)
 
-p.to_csv("Test_new.csv", index= False)
-
-csv_1 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv")
+csv_1 = pd.read_csv("stocks.csv")
 print(csv_1)
 
+print(csv_1.index)
+print(csv_1.columns)
 
-csv_2 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", nrows=5, usecols= [0, 1]) #or ["A", "B"]
-print(csv_2)
-print(type(csv_2))
+print(csv_1.describe())
+print(csv_1.head())
+print(csv_1.tail())
+print(csv_1.head(2))
+print(csv_1.tail(3))
+print(csv_1[:2])
+print(csv_1[3:9])
+print(type(csv_1))
+print(csv_1.index.array)
+print(csv_1.to_numpy())
 
-csv_3 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", skiprows= [0])
-print(csv_3)
+import numpy as np
+v = np.asarray(csv_1)
+print(v)
 
-csv_4 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", index_col= "A")
-print(csv_4)
+print(csv_1.sort_index(axis=0, ascending= False))
 
+csv_1.loc[0, "Symbol"] = "Python"
+print(csv_1)
 
-csv_5 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", header= 4)
-print(csv_5)
+print(csv_1.loc[[2,3], ["Symbol", "Company Name"]])
 
-csv_6 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", names= ["Col"], dtype={"C" : "float"})
-print(csv_6)
+print(csv_1.iloc[0, 2])
+
+print(csv_1.drop("Company Name", axis = 1))
+print(csv_1)
