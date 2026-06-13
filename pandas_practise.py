@@ -91,57 +91,57 @@ import pandas as pd
 
 # INSERTION AND DELETION
 
-var = pd.DataFrame({"A" : [1,2,3,4,5],
-                    "B" : [9,8,7,6,5],
-                    "C" : [11,12,34,5,6]})
-print(var)
+# var = pd.DataFrame({"A" : [1,2,3,4,5],
+#                     "B" : [9,8,7,6,5],
+#                     "C" : [11,12,34,5,6]})
+# print(var)
 
-var.insert(1, "Python", var["A"])
-print(var)
+# var.insert(1, "Python", var["A"])
+# print(var)
 
-var.insert(1, "Python_1", [11,12,13,14,15])
-print(var)
+# var.insert(1, "Python_1", [11,12,13,14,15])
+# print(var)
 
-var["Python_12"] = var["A"][:3]
+# var["Python_12"] = var["A"][:3]
 
 
 # DELETION
 
-var1 = var.pop("B")
+# var1 = var.pop("B")
 
-print(var, "\n")
-print(var1)
+# print(var, "\n")
+# print(var1)
 
-del var["A"]
-print(var)
+# del var["A"]
+# print(var)
 
 
 # CREATING CSV FILES USING PANDAS
 
-# p = pd.DataFrame({"A" : [1,2,3,4,5,6],
-#                   "B" : [1,2,3,4,5,6],
-#                   "C" : [1,2,3,4,5,6]})
-# print(p)
+p = pd.DataFrame({"A" : [1,2,3,4,5,6],
+                  "B" : [1,2,3,4,5,6],
+                  "C" : [1,2,3,4,5,6]})
+print(p)
 
-# p.to_csv("Test_new.csv", index= False)
+p.to_csv("Test_new.csv", index= False)
 
-# csv_1 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv")
-# print(csv_1)
-
-
-# csv_2 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", nrows=5, usecols= [0, 1]) #or ["A", "B"]
-# print(csv_2)
-# print(type(csv_2))
-
-# csv_3 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", skiprows= [0])
-# print(csv_3)
-
-# csv_4 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", index_col= "A")
-# print(csv_4)
+csv_1 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv")
+print(csv_1)
 
 
-# csv_5 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", header= 4)
-# print(csv_5)
+csv_2 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", nrows=5, usecols= [0, 1]) #or ["A", "B"]
+print(csv_2)
+print(type(csv_2))
 
-# csv_6 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", names= ["Col"], dtype={"C" : "float"})
-# print(csv_6)
+csv_3 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", skiprows= [0])
+print(csv_3)
+
+csv_4 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", index_col= "A")
+print(csv_4)
+
+
+csv_5 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", header= 4)
+print(csv_5)
+
+csv_6 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", names= ["Col"], dtype={"C" : "float"})
+print(csv_6)
