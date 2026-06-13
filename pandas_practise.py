@@ -303,24 +303,72 @@ import pandas as pd
 
 # GROUP BY
 
-var = pd.DataFrame({
-    "name" : ["a", "b", "c", "d", "a", "a", "b", "a", "c", "c", "a"],
-    "subject1" : [12, 13, 14, 12, 14, 15, 23, 25, 16, 23, 13],
-    "subject2" : [23,12,12,14,15,23,19,10,23,25,12]
-})
+# var = pd.DataFrame({
+#     "name" : ["a", "b", "c", "d", "a", "a", "b", "a", "c", "c", "a"],
+#     "subject1" : [12, 13, 14, 12, 14, 15, 23, 25, 16, 23, 13],
+#     "subject2" : [23,12,12,14,15,23,19,10,23,25,12]
+# })
 
-var
+# var
 
-var_New = var.groupby("name") #grouping/ arranging by name column
+# var_New = var.groupby("name") #grouping/ arranging by name column
 
-for x,y in var_New : 
-    print(x)
-    print(y, "\n")
+# for x,y in var_New : 
+#     print(x)
+#     print(y, "\n")
 
-print(var_New.get_group("a")) #printing singular groups
+# print(var_New.get_group("a")) #printing singular groups
 
-var_New.min() #min value of s1 and s2
-var_New.max()  #max value of s1 and s2
-var_New.mean() #mean of s1 and s2
+# var_New.min() #min value of s1 and s2
+# var_New.max()  #max value of s1 and s2
+# var_New.mean() #mean of s1 and s2
 
-li = list(var_New) #converting to list
+# li = list(var_New) #converting to list
+
+
+# JOIN AND APPEND
+
+var1 = pd.DataFrame({
+    "A" : [1,2,3,4],
+    "B" : [11,12,13,14]
+}, index= ["a", "b", "c", "d"])
+
+var2 = pd.DataFrame({
+    "C" : [10,20,30,40],
+    "D" : [11,22,33,44]
+}, index= ["a", "b", "c", "d"])   #both dataframes must have same indexes or else we will get nan
+
+print(var1.join(var2))  #joins var 2 with var 1, incase there are missing, unamtched values then it shows nan 
+var2.join(var1) #this will revers C D then A B, incase if var2 has less data like 2 as comapred to var 1 which has 4 then it will print only 2 rows
+
+var2.join(var1, how = "outer") #prints all even if theres any missing, fills nan with missing   
+var2.join(var1, how = "inner") #prints only intersections 
+
+var1 = pd.DataFrame({
+    "A" : [1,2,3,4],
+    "B" : [11,12,13,14]
+}, index= ["a", "b", "c", "d"])
+
+var2 = pd.DataFrame({
+    "C" : [10,20,30,40],
+    "B" : [11,22,33,44]
+}, index= ["a", "b", "c", "d"]) #Simialar column name
+
+var2.join(var1, how = "outer", lsuffix = "_l2") #this will for the runtime make the left side B as B_l2 and add a suffix
+var2.join(var1, how = "outer", Rsuffix = "_l2") #this will for the runtime make the right side B as B_l2 and add a suffix
+var2.join(var1, how = "outer", lsuffix = "l2", Rsuffix = "_l2") #this will work too since for the runtime we are distinguising right and left sides of B
+
+
+# APPEND
+
+var1 = pd.DataFrame({
+    "A" : [1,2,3,4],
+    "B" : [11,12,13,14]
+}, index= ["a", "b", "c", "d"])
+
+var2 = pd.DataFrame({
+    "C" : [10,20,30,40],
+    "B" : [11,22,33,44]
+}, index= ["a", "b", "c", "d"]) #Simialar column name
+
+var1.append(var2) #similar to concat does not affect itself even if there are name clashing however in pandas 2.0 append has been removed so this will throw an error
