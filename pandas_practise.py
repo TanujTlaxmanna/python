@@ -23,3 +23,40 @@ import pandas as pd
 # s2 = pd.Series(12, index = [1,2,3,4])
 
 # print(s1+s2)
+
+
+# DATAFRAMES - 2D STRUCTURE
+
+# using lists
+# l = [1,2,3,4,5,6]
+# var = pd.DataFrame(l)
+# print(var)
+# print(type(var))
+
+# list1 = [[1,2,3,4,5], [6,7,8,9,0]]
+# var2 = pd.DataFrame(list1)
+# print(var2)
+
+# using dictionaaries
+
+# d = {"a" : [1,2,3,4,5],
+#      "b" : [6,7,8,9,0]}
+
+# var1 = pd.DataFrame(d)
+# print(var1)
+# print(type(var1))
+
+# specific columns
+
+# var1 = pd.DataFrame(d, columns= ["a"], index = ["a", "b", "c", "d", "e"])
+# print(var1, "\n")
+# print(d["a"][3])
+
+
+# Using series
+
+# sr = {"s" : pd.Series([1,2,3,4,5]),
+#       "r" : pd.Series([6,7,8,9,0])}
+
+# var3 = pd.DataFrame(sr, index = [0,1,2,3,4])
+# print(var3)
