@@ -210,29 +210,92 @@ import pandas as pd
 
 # REPLACE
 
-var = pd.read_csv("stocks.csv")
+# var = pd.read_csv("stocks.csv")
 
-var.replace(to_replace = 1, value=22) #Replaces all singular 1 in dataset with 22
-var.replace(to_replace= "ABC Industries Limited", value= "python")
-var.replace([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 22) #Replaces 1-14 with 22  
-var.replace("[A-za-z]", "python", regix = True) #Here we dont use comma because regix dont use comma to seperate, it will also replace all the instances of the letter with python so abc = pythonpythonpython
-var.replace({"Symbol" : "[A-Z]"}, 22, regix = True) #Same as above but replaces specific column
-var.replace(1, method = "ffill") #Replaces all singlular ones in dataset with above number
-var.replace(1, method = "bfill") #Replaces all singlular ones in dataset with below number
-var.replace(1, method = "ffill", limit =2) #Replaces first 2 instances of singular 1
-var.replace(1, method = "ffill", limit = 3, inplace= True) #will replace in the original dataset
+# var.replace(to_replace = 1, value=22) #Replaces all singular 1 in dataset with 22
+# var.replace(to_replace= "ABC Industries Limited", value= "python")
+# var.replace([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 22) #Replaces 1-14 with 22  
+# var.replace("[A-za-z]", "python", regix = True) #Here we dont use comma because regix dont use comma to seperate, it will also replace all the instances of the letter with python so abc = pythonpythonpython
+# var.replace({"Symbol" : "[A-Z]"}, 22, regix = True) #Same as above but replaces specific column
+# var.replace(1, method = "ffill") #Replaces all singlular ones in dataset with above number
+# var.replace(1, method = "bfill") #Replaces all singlular ones in dataset with below number
+# var.replace(1, method = "ffill", limit =2) #Replaces first 2 instances of singular 1
+# var.replace(1, method = "ffill", limit = 3, inplace= True) #will replace in the original dataset
 
 # INTERPOLATE - automatically replaces nan values with sequence of previous data
 
-var = pd.read_csv("stocks.csv")
+# var = pd.read_csv("stocks.csv")
 
-var.interpolate() #only works with numerical data
-var.interpolate(method = "linear") #fills data linearly
-var.interpolate(method = "linear", axis = 1) #This happens only when all work is done numerically, cannot work with strings
-var.interpolate(limit = 2) #Fills only 2 nan values
-var.interpolate(limit_direction= "forward" ,limit = 2) #from top to bottom
-var.interpolate(limit_direction= "backward" ,limit = 2) #from bottom to top
-var.interpolate(limit_direction= "both" ,limit = 2) #from top to bottom and bottom to top
-var.interpolate(limit_area = "inside") #fills only all nan data that are in between of 2 valid values - 3 4 nan nan 5
-var.interpolate(limit_area = "outside") #fills only the blank data at beginning and ending of dataset nan nan 3 4 nan nan
-var.interpolate(limit_direction = "both", limit = 2, inplace = "True") #will make changes in orignal dataset
+# var.interpolate() #only works with numerical data
+# var.interpolate(method = "linear") #fills data linearly
+# var.interpolate(method = "linear", axis = 1) #This happens only when all work is done numerically, cannot work with strings
+# var.interpolate(limit = 2) #Fills only 2 nan values
+# var.interpolate(limit_direction= "forward" ,limit = 2) #from top to bottom
+# var.interpolate(limit_direction= "backward" ,limit = 2) #from bottom to top
+# var.interpolate(limit_direction= "both" ,limit = 2) #from top to bottom and bottom to top
+# var.interpolate(limit_area = "inside") #fills only all nan data that are in between of 2 valid values - 3 4 nan nan 5
+# var.interpolate(limit_area = "outside") #fills only the blank data at beginning and ending of dataset nan nan 3 4 nan nan
+# var.interpolate(limit_direction = "both", limit = 2, inplace = "True") #will make changes in orignal dataset
+
+
+
+# MERGING DATAFRAMES
+
+var1 = pd.DataFrame({"A" : [1,2,3,4],
+                     "B" : [11,12,13,14]})
+var2 = pd.DataFrame({"A" : [1,2,3,4],
+                     "C" : [91,25,53,41]})
+
+print(var1)
+print(var2, "\n")
+print(pd.merge(var1, var2, on = "A"))
+print(pd.merge(var2, var1, on = "A"))
+
+var3 = pd.DataFrame({"A" : [1,2,3,4],
+                     "B" : [11,12,13,14]})
+var4 = pd.DataFrame({"A" : [1,2,3,44],
+                     "C" : [91,25,53,41]})
+
+print(pd.merge(var3, var4, on = "A"))
+print(pd.merge(var4, var3, on = "A"))
+
+# acts like joints from sql - left, right, outer, inner
+pd.merge(var3, var4, how = "outer")  #left prints all value in var 3 and puts nan in var 4 where value is not there, right does the same with var 4 and var 3, outer will make union and print all teh valeus and nan in missing places , inner will find intersection points and print only common points 
+
+pd.merge(var3, var4, how= "outer", indicator= True) #shows what data are missing and what are present - both, left_only, right_only
+
+var1 = pd.DataFrame({"A" : [1,2,3,4],
+                     "B" : [11,12,13,14]})
+var2 = pd.DataFrame({"A" : [1,2,3,4],
+                     "B" : [91,25,53,41]})
+pd.merge(var1, var2, left_index= True, right_index= True) #Normally since both A and B are common we wont get a table, but with left and right index we will get the data in form of ax, bx, ay, by
+pd.merge(var1, var2, left_index= True, right_index= True, suffixes = ("names", "id")) #gives suffixes and replaces ax, bx with names and ay, by with id
+
+# COCNCAT
+
+sr1 = pd.Series([1,2,3,4])
+sr2 = pd.Series([11,21,31,41])
+
+sr1
+sr2
+
+pd.concat([sr1, sr2]) #concats series 1 and series 2
+pd.concat([var1, var2]) #concates dict1 and dict2, this does not care about common parts
+pd.concat([var1, var2], axis = 1) #column wise
+pd.concat([var1, var2], axis = 0) #rowwise, default
+
+
+var1 = pd.DataFrame({"A" : [1,2,3,4],
+                     "B" : [11,12,13,14]})
+var2 = pd.DataFrame({"A" : [1,2],
+                     "B" : [91,25,53,41]})
+
+pd.concat([var1, var2], axis = 1) #this will concat both dicts and show nan in missing places
+pd.concat([var1, var2], axis = 1, join = "inner") #will not show missing data
+pd.concat([var1, var2], axis = 0, join = "inner" , keys = ["A", "B"]) #gives title and shows blocks of merges
+
+var1 = pd.DataFrame({"A" : [1,2,3,4]})
+var2 = pd.DataFrame({"B" : [1,2],
+                     "C" : [91,25,53,41]})
+
+pd.concat([var1, var2]) #This will also merge and show nan in missing places
