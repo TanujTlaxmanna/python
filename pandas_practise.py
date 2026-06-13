@@ -149,39 +149,60 @@ import pandas as pd
 
 # Pandas Functions
 
-p = pd.DataFrame({"A" : [1,2,3,4,5,6],
-                  "B" : [1,2,3,4,5,6],
-                  "C" : [1,2,3,4,5,6]})
+# p = pd.DataFrame({"A" : [1,2,3,4,5,6],
+#                   "B" : [1,2,3,4,5,6],
+#                   "C" : [1,2,3,4,5,6]})
 
-csv_1 = pd.read_csv("stocks.csv")
-print(csv_1)
+# csv_1 = pd.read_csv("stocks.csv")
+# print(csv_1)
 
-print(csv_1.index)
-print(csv_1.columns)
+# print(csv_1.index)
+# print(csv_1.columns)
 
-print(csv_1.describe())
-print(csv_1.head())
-print(csv_1.tail())
-print(csv_1.head(2))
-print(csv_1.tail(3))
-print(csv_1[:2])
-print(csv_1[3:9])
-print(type(csv_1))
-print(csv_1.index.array)
-print(csv_1.to_numpy())
+# print(csv_1.describe())
+# print(csv_1.head())
+# print(csv_1.tail())
+# print(csv_1.head(2))
+# print(csv_1.tail(3))
+# print(csv_1[:2])
+# print(csv_1[3:9])
+# print(type(csv_1))
+# print(csv_1.index.array)
+# print(csv_1.to_numpy())
 
-import numpy as np
-v = np.asarray(csv_1)
-print(v)
+# import numpy as np
+# v = np.asarray(csv_1)
+# print(v)
 
-print(csv_1.sort_index(axis=0, ascending= False))
+# print(csv_1.sort_index(axis=0, ascending= False))
 
-csv_1.loc[0, "Symbol"] = "Python"
-print(csv_1)
+# csv_1.loc[0, "Symbol"] = "Python"
+# print(csv_1)
 
-print(csv_1.loc[[2,3], ["Symbol", "Company Name"]])
+# print(csv_1.loc[[2,3], ["Symbol", "Company Name"]])
 
-print(csv_1.iloc[0, 2])
+# print(csv_1.iloc[0, 2])
 
-print(csv_1.drop("Company Name", axis = 1))
-print(csv_1)
+# print(csv_1.drop("Company Name", axis = 1))
+# print(csv_1)
+
+
+# DROP NA AND FILL NA
+var = pd.read_csv("stocks.csv")
+var.dropna() #This drops all nan columns
+var.dropna(axis= 0)
+var.dropna(how= "any")  #This drops all the rows which have atleast one nan
+var.dropna(how= "all")  #This only drops the row which has all nan value
+var.dropna(subset= ["Change"]) #Removes a null value along column
+var.dropna(inplace= True) #This directly makes changes to the original dataset instead of creating a copy
+var.dropna(thresh= 1) #This drops only single null value
+
+var.fillna("Python") #Fills/Replaces nan value with python
+var.fillna({"Symbol" : "python",
+            "Company Name" : "Python2"}) #This replaces nan in specified columns so any nan in symbol column gets replaced by python and so on
+var.fillna(method = "ffill") #Fills with leading data
+var.fillna(method = "bfill") #FIlls with trailing data
+var.fillna(method = "bfill", axis = 0) #FIlls with trailing data alongside columns. Takes data from above value , default
+var.fillna(method = "bfill", axis = 1) #FIlls with trailing data alongside rows. Takes data from left value
+var.fillna(12, inplace= True) #This directly makes changes to the original dataset instead of creating a copy. Fills with 12
+var.fillna("python", limit = 2) #Fills the first 2 Nan data from top to bottom
