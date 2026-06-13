@@ -81,9 +81,36 @@ import pandas as pd
 # var["F"] = var["C"] / var["A"]
 # print(var.round(2))
 
-var1 = pd.DataFrame({"A" : [15,22,33,64,12],
-                    "B" : [60,75,8,9,0]})
+# var1 = pd.DataFrame({"A" : [15,22,33,64,12],
+#                     "B" : [60,75,8,9,0]})
 
-var1["Python"] = var1["A"] <=20
-var1["Python2"] = var1["B"] >=19
-print(var1)
+# var1["Python"] = var1["A"] <=20
+# var1["Python2"] = var1["B"] >=19
+# print(var1)
+
+
+# INSERTION AND DELETION
+
+# var = pd.DataFrame({"A" : [1,2,3,4,5],
+#                     "B" : [9,8,7,6,5],
+#                     "C" : [11,12,34,5,6]})
+# print(var)
+
+# var.insert(1, "Python", var["A"])
+# print(var)
+
+# var.insert(1, "Python_1", [11,12,13,14,15])
+# print(var)
+
+# var["Python_12"] = var["A"][:3]
+
+
+# DELETION
+
+# var1 = var.pop("B")
+
+# print(var, "\n")
+# print(var1)
+
+# del var["A"]
+# print(var)
