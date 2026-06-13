@@ -60,3 +60,30 @@ import pandas as pd
 
 # var3 = pd.DataFrame(sr, index = [0,1,2,3,4])
 # print(var3)
+
+
+# Arithmetic Operations
+
+# var = pd.DataFrame({"A" : [1,2,3,4,5],
+#                     "B" : [6,7,8,9,0]})
+
+# print(var)
+
+# var["C"] = var["A"] + var["B"]
+# print(var)
+
+# var["D"] = var["C"] - var["A"]
+# print(var)
+
+# var["E"] = var["C"] * var["A"]
+# print(var)
+
+# var["F"] = var["C"] / var["A"]
+# print(var.round(2))
+
+var1 = pd.DataFrame({"A" : [15,22,33,64,12],
+                    "B" : [60,75,8,9,0]})
+
+var1["Python"] = var1["A"] <=20
+var1["Python2"] = var1["B"] >=19
+print(var1)
