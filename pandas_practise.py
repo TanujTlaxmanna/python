@@ -328,47 +328,84 @@ import pandas as pd
 
 # JOIN AND APPEND
 
-var1 = pd.DataFrame({
-    "A" : [1,2,3,4],
-    "B" : [11,12,13,14]
-}, index= ["a", "b", "c", "d"])
+# var1 = pd.DataFrame({
+#     "A" : [1,2,3,4],
+#     "B" : [11,12,13,14]
+# }, index= ["a", "b", "c", "d"])
 
-var2 = pd.DataFrame({
-    "C" : [10,20,30,40],
-    "D" : [11,22,33,44]
-}, index= ["a", "b", "c", "d"])   #both dataframes must have same indexes or else we will get nan
+# var2 = pd.DataFrame({
+#     "C" : [10,20,30,40],
+#     "D" : [11,22,33,44]
+# }, index= ["a", "b", "c", "d"])   #both dataframes must have same indexes or else we will get nan
 
-print(var1.join(var2))  #joins var 2 with var 1, incase there are missing, unamtched values then it shows nan 
-var2.join(var1) #this will revers C D then A B, incase if var2 has less data like 2 as comapred to var 1 which has 4 then it will print only 2 rows
+# print(var1.join(var2))  #joins var 2 with var 1, incase there are missing, unamtched values then it shows nan 
+# var2.join(var1) #this will revers C D then A B, incase if var2 has less data like 2 as comapred to var 1 which has 4 then it will print only 2 rows
 
-var2.join(var1, how = "outer") #prints all even if theres any missing, fills nan with missing   
-var2.join(var1, how = "inner") #prints only intersections 
+# var2.join(var1, how = "outer") #prints all even if theres any missing, fills nan with missing   
+# var2.join(var1, how = "inner") #prints only intersections 
 
-var1 = pd.DataFrame({
-    "A" : [1,2,3,4],
-    "B" : [11,12,13,14]
-}, index= ["a", "b", "c", "d"])
+# var1 = pd.DataFrame({
+#     "A" : [1,2,3,4],
+#     "B" : [11,12,13,14]
+# }, index= ["a", "b", "c", "d"])
 
-var2 = pd.DataFrame({
-    "C" : [10,20,30,40],
-    "B" : [11,22,33,44]
-}, index= ["a", "b", "c", "d"]) #Simialar column name
+# var2 = pd.DataFrame({
+#     "C" : [10,20,30,40],
+#     "B" : [11,22,33,44]
+# }, index= ["a", "b", "c", "d"]) #Simialar column name
 
-var2.join(var1, how = "outer", lsuffix = "_l2") #this will for the runtime make the left side B as B_l2 and add a suffix
-var2.join(var1, how = "outer", Rsuffix = "_l2") #this will for the runtime make the right side B as B_l2 and add a suffix
-var2.join(var1, how = "outer", lsuffix = "l2", Rsuffix = "_l2") #this will work too since for the runtime we are distinguising right and left sides of B
+# var2.join(var1, how = "outer", lsuffix = "_l2") #this will for the runtime make the left side B as B_l2 and add a suffix
+# var2.join(var1, how = "outer", Rsuffix = "_l2") #this will for the runtime make the right side B as B_l2 and add a suffix
+# var2.join(var1, how = "outer", lsuffix = "l2", Rsuffix = "_l2") #this will work too since for the runtime we are distinguising right and left sides of B
 
 
 # APPEND
 
-var1 = pd.DataFrame({
-    "A" : [1,2,3,4],
-    "B" : [11,12,13,14]
-}, index= ["a", "b", "c", "d"])
+# var1 = pd.DataFrame({
+#     "A" : [1,2,3,4],
+#     "B" : [11,12,13,14]
+# }, index= ["a", "b", "c", "d"])
 
-var2 = pd.DataFrame({
-    "C" : [10,20,30,40],
-    "B" : [11,22,33,44]
-}, index= ["a", "b", "c", "d"]) #Simialar column name
+# var2 = pd.DataFrame({
+#     "C" : [10,20,30,40],
+#     "B" : [11,22,33,44]
+# }, index= ["a", "b", "c", "d"]) #Simialar column name
 
-var1.append(var2) #similar to concat does not affect itself even if there are name clashing however in pandas 2.0 append has been removed so this will throw an error
+# var1.append(var2) #similar to concat does not affect itself even if there are name clashing however in pandas 2.0 append has been removed so this will throw an error
+
+
+# MELT() FUNCTION - denotes data in single column
+
+var = pd.DataFrame({
+    "days" : [1,2,3,4,5,6],
+    "eng" : [10,12,14,15,16,12],
+    "math" : [17,18,19,13,14,16]
+})
+
+pd.melt(var) #makes table verticle
+pd.melt(var, id_vars = ["days"]) #this will make indexs as days number
+pd.melt(var, id_vars = ["days"], var_name = "python", value_name = "tanuj")
+
+
+# PIVOT() FUNCTION
+
+var = pd.DataFrame({
+    "days" : [1,2,3,4,5,6],
+    "st_name" : ["a", "b", "c", "a", "b", "c"],
+    "eng" : [10,12,14,15,16,12],
+    "math" : [17,18,19,13,14,16]
+})
+
+var.pivot(index = "days", columns = "st_name")  #makes a pivot table and fills nan for missing data spaces
+var.pivot(index = "days", columns = "st_name", values = "eng") #shows only english subject data
+var.pivot(index = "days", columns = "st_name")
+
+var = pd.DataFrame({
+    "days" : [1,1,1,1,2,2],
+    "st_name" : ["a", "b", "c", "a", "b", "c"],
+    "eng" : [10,12,14,15,16,12],
+    "math" : [17,18,19,13,14,16]
+})
+
+var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean") #aggfunc is aggregate function
+var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean", margins = "True") #margins adds a summary column like mean
