@@ -2,27 +2,27 @@
 
 import pandas as pd
 
-# x = [3,4,5,6,7,8,9]
-# a = pd.Series(x, index = ['a', 'b', 'c', 'd', 'e', 'f', 'g'], dtype = "float", name = "Pythong")
-# print(a)
-# print(type(a))
-# print(x[5])
+x = [3,4,5,6,7,8,9]
+a = pd.Series(x, index = ['a', 'b', 'c', 'd', 'e', 'f', 'g'], dtype = "float", name = "Pythong")
+print(a)
+print(type(a))
+print(x[5])
 
-# dic = {"Name" : ["Python", "Java", "C#", "C++"],
-#         "Por" : [12,13,14,15],
-#         "Rank" : [1,4,3,2]}
+dic = {"Name" : ["Python", "Java", "C#", "C++"],
+        "Por" : [12,13,14,15],
+        "Rank" : [1,4,3,2]}
 
-# var1 = pd.Series(dic)
-# print(var1)
+var1 = pd.Series(dic)
+print(var1)
 
-# s = pd.Series(12, index = [1,2,3,4,5,6,7])
-# print(s)
-# print(type(s))
+s = pd.Series(12, index = [1,2,3,4,5,6,7])
+print(s)
+print(type(s))
 
-# s1 = pd.Series(12, index = [1,2,3,4,5,6,7])
-# s2 = pd.Series(12, index = [1,2,3,4])
+s1 = pd.Series(12, index = [1,2,3,4,5,6,7])
+s2 = pd.Series(12, index = [1,2,3,4])
 
-# print(s1+s2)
+print(s1+s2)
 
 
 # DATAFRAMES - 2D STRUCTURE
@@ -114,3 +114,34 @@ import pandas as pd
 
 # del var["A"]
 # print(var)
+
+
+# CREATING CSV FILES USING PANDAS
+
+# p = pd.DataFrame({"A" : [1,2,3,4,5,6],
+#                   "B" : [1,2,3,4,5,6],
+#                   "C" : [1,2,3,4,5,6]})
+# print(p)
+
+# p.to_csv("Test_new.csv", index= False)
+
+# csv_1 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv")
+# print(csv_1)
+
+
+# csv_2 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", nrows=5, usecols= [0, 1]) #or ["A", "B"]
+# print(csv_2)
+# print(type(csv_2))
+
+# csv_3 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", skiprows= [0])
+# print(csv_3)
+
+# csv_4 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", index_col= "A")
+# print(csv_4)
+
+
+# csv_5 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", header= 4)
+# print(csv_5)
+
+# csv_6 = pd.read_csv("C:\\Users\\Office Pc\\OneDrive\\Desktop\\paithan\\Test_new.csv", names= ["Col"], dtype={"C" : "float"})
+# print(csv_6)
