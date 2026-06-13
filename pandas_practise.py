@@ -188,21 +188,51 @@ import pandas as pd
 
 
 # DROP NA AND FILL NA
-var = pd.read_csv("stocks.csv")
-var.dropna() #This drops all nan columns
-var.dropna(axis= 0)
-var.dropna(how= "any")  #This drops all the rows which have atleast one nan
-var.dropna(how= "all")  #This only drops the row which has all nan value
-var.dropna(subset= ["Change"]) #Removes a null value along column
-var.dropna(inplace= True) #This directly makes changes to the original dataset instead of creating a copy
-var.dropna(thresh= 1) #This drops only single null value
+# var = pd.read_csv("stocks.csv")
+# var.dropna() #This drops all nan columns
+# var.dropna(axis= 0)
+# var.dropna(how= "any")  #This drops all the rows which have atleast one nan
+# var.dropna(how= "all")  #This only drops the row which has all nan value
+# var.dropna(subset= ["Change"]) #Removes a null value along column
+# var.dropna(inplace= True) #This directly makes changes to the original dataset instead of creating a copy
+# var.dropna(thresh= 1) #This drops only single null value
 
-var.fillna("Python") #Fills/Replaces nan value with python
-var.fillna({"Symbol" : "python",
-            "Company Name" : "Python2"}) #This replaces nan in specified columns so any nan in symbol column gets replaced by python and so on
-var.fillna(method = "ffill") #Fills with leading data
-var.fillna(method = "bfill") #FIlls with trailing data
-var.fillna(method = "bfill", axis = 0) #FIlls with trailing data alongside columns. Takes data from above value , default
-var.fillna(method = "bfill", axis = 1) #FIlls with trailing data alongside rows. Takes data from left value
-var.fillna(12, inplace= True) #This directly makes changes to the original dataset instead of creating a copy. Fills with 12
-var.fillna("python", limit = 2) #Fills the first 2 Nan data from top to bottom
+# var.fillna("Python") #Fills/Replaces nan value with python
+# var.fillna({"Symbol" : "python",
+#             "Company Name" : "Python2"}) #This replaces nan in specified columns so any nan in symbol column gets replaced by python and so on
+# var.fillna(method = "ffill") #Fills with leading data
+# var.fillna(method = "bfill") #FIlls with trailing data
+# var.fillna(method = "bfill", axis = 0) #FIlls with trailing data alongside columns. Takes data from above value , default
+# var.fillna(method = "bfill", axis = 1) #FIlls with trailing data alongside rows. Takes data from left value
+# var.fillna(12, inplace= True) #This directly makes changes to the original dataset instead of creating a copy. Fills with 12
+# var.fillna("python", limit = 2) #Fills the first 2 Nan data from top to bottom
+
+
+# REPLACE
+
+var = pd.read_csv("stocks.csv")
+
+var.replace(to_replace = 1, value=22) #Replaces all singular 1 in dataset with 22
+var.replace(to_replace= "ABC Industries Limited", value= "python")
+var.replace([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 22) #Replaces 1-14 with 22  
+var.replace("[A-za-z]", "python", regix = True) #Here we dont use comma because regix dont use comma to seperate, it will also replace all the instances of the letter with python so abc = pythonpythonpython
+var.replace({"Symbol" : "[A-Z]"}, 22, regix = True) #Same as above but replaces specific column
+var.replace(1, method = "ffill") #Replaces all singlular ones in dataset with above number
+var.replace(1, method = "bfill") #Replaces all singlular ones in dataset with below number
+var.replace(1, method = "ffill", limit =2) #Replaces first 2 instances of singular 1
+var.replace(1, method = "ffill", limit = 3, inplace= True) #will replace in the original dataset
+
+# INTERPOLATE - automatically replaces nan values with sequence of previous data
+
+var = pd.read_csv("stocks.csv")
+
+var.interpolate() #only works with numerical data
+var.interpolate(method = "linear") #fills data linearly
+var.interpolate(method = "linear", axis = 1) #This happens only when all work is done numerically, cannot work with strings
+var.interpolate(limit = 2) #Fills only 2 nan values
+var.interpolate(limit_direction= "forward" ,limit = 2) #from top to bottom
+var.interpolate(limit_direction= "backward" ,limit = 2) #from bottom to top
+var.interpolate(limit_direction= "both" ,limit = 2) #from top to bottom and bottom to top
+var.interpolate(limit_area = "inside") #fills only all nan data that are in between of 2 valid values - 3 4 nan nan 5
+var.interpolate(limit_area = "outside") #fills only the blank data at beginning and ending of dataset nan nan 3 4 nan nan
+var.interpolate(limit_direction = "both", limit = 2, inplace = "True") #will make changes in orignal dataset
