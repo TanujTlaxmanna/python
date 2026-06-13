@@ -376,36 +376,36 @@ import pandas as pd
 
 # MELT() FUNCTION - denotes data in single column
 
-var = pd.DataFrame({
-    "days" : [1,2,3,4,5,6],
-    "eng" : [10,12,14,15,16,12],
-    "math" : [17,18,19,13,14,16]
-})
+# var = pd.DataFrame({
+#     "days" : [1,2,3,4,5,6],
+#     "eng" : [10,12,14,15,16,12],
+#     "math" : [17,18,19,13,14,16]
+# })
 
-pd.melt(var) #makes table verticle
-pd.melt(var, id_vars = ["days"]) #this will make indexs as days number
-pd.melt(var, id_vars = ["days"], var_name = "python", value_name = "tanuj")
+# pd.melt(var) #makes table verticle
+# pd.melt(var, id_vars = ["days"]) #this will make indexs as days number
+# pd.melt(var, id_vars = ["days"], var_name = "python", value_name = "tanuj")
 
 
 # PIVOT() FUNCTION
 
-var = pd.DataFrame({
-    "days" : [1,2,3,4,5,6],
-    "st_name" : ["a", "b", "c", "a", "b", "c"],
-    "eng" : [10,12,14,15,16,12],
-    "math" : [17,18,19,13,14,16]
-})
+# var = pd.DataFrame({
+#     "days" : [1,2,3,4,5,6],
+#     "st_name" : ["a", "b", "c", "a", "b", "c"],
+#     "eng" : [10,12,14,15,16,12],
+#     "math" : [17,18,19,13,14,16]
+# })
 
-var.pivot(index = "days", columns = "st_name")  #makes a pivot table and fills nan for missing data spaces
-var.pivot(index = "days", columns = "st_name", values = "eng") #shows only english subject data
-var.pivot(index = "days", columns = "st_name")
+# var.pivot(index = "days", columns = "st_name")  #makes a pivot table and fills nan for missing data spaces
+# var.pivot(index = "days", columns = "st_name", values = "eng") #shows only english subject data
+# var.pivot(index = "days", columns = "st_name")
 
-var = pd.DataFrame({
-    "days" : [1,1,1,1,2,2],
-    "st_name" : ["a", "b", "c", "a", "b", "c"],
-    "eng" : [10,12,14,15,16,12],
-    "math" : [17,18,19,13,14,16]
-})
+# var = pd.DataFrame({
+#     "days" : [1,1,1,1,2,2],
+#     "st_name" : ["a", "b", "c", "a", "b", "c"],
+#     "eng" : [10,12,14,15,16,12],
+#     "math" : [17,18,19,13,14,16]
+# })
 
-var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean") #aggfunc is aggregate function
-var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean", margins = "True") #margins adds a summary column like mean
+# var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean") #aggfunc is aggregate function
+# var.pivot_table(index = "st_name", columns = "days", aggfunc = "mean", margins = "True") #margins adds a summary column like mean
