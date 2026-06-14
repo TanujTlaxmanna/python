@@ -66,44 +66,82 @@ import numpy as np
 
 # ZERO ARRAY
 
-ar_zero = np.zeros(4)
-print(ar_zero)
+# ar_zero = np.zeros(4)
+# print(ar_zero)
 
-ar_zero1 = np.zeros((3,4))
-print(ar_zero1)
+# ar_zero1 = np.zeros((3,4))
+# print(ar_zero1)
 
 
 # ONES ARRAY
 
-ar_ones = np.ones(4)
-print(ar_ones)
+# ar_ones = np.ones(4)
+# print(ar_ones)
 
-ar_ones1 = np.ones((3,4))
-print(ar_ones1)
+# ar_ones1 = np.ones((3,4))
+# print(ar_ones1)
 
 
 # EMPTY ARRAY
 
-ar_emp = np.empty(4)
-print(ar_emp) # This will take up the values of previous memory
+# ar_emp = np.empty(4)
+# print(ar_emp) # This will take up the values of previous memory
 
 
 # RANGE OF ARRAY
 
-ar_range = np.arange(4)
-print(ar_range)
+# ar_range = np.arange(4)
+# print(ar_range)
 
 
 # DIAGONAL ARRAY
 
-ar_dig = np.eye(3)
-print(ar_dig)
+# ar_dig = np.eye(3)
+# print(ar_dig)
 
-ar_dig1 = np.eye(3,5)
-print(ar_dig1)
+# ar_dig1 = np.eye(3,5)
+# print(ar_dig1)
 
 
 # SPECIAL INTERVALS ARRAY LINSPACE
 
-ar_lin = np.linspace(1,10,num = 5)
-print(ar_lin)
+# ar_lin = np.linspace(1,10,num = 5)
+# print(ar_lin)
+
+
+
+# RANDOMS
+
+# RAND()
+
+var = np.random.rand(4)
+print(var)
+
+var1 = np.random.rand(2,5)   # 2-D array
+print(var1)
+
+
+# RANDN()
+
+var2 = np.random.randn(5)
+print(var2)
+
+var3 = np.random.randn(3,5) # 2-D array
+print(var3)
+
+
+# RANF()
+
+var4 = np.random.ranf(4)
+print(var4)
+
+var5 = np.random.ranf((4,5)) # 2-D ARRAY
+print(var5)
+
+# RANDINT()
+
+var6 = np.random.randint(5,20,5)
+print(var6)
+
+var7 = np.random.randint(5,20,(4,5)) #2-D ARRAY
+print(var7)
