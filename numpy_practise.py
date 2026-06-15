@@ -511,3 +511,24 @@ import numpy as np
 
 # for i,data in np.ndenumerate(var4):
 #     print(i,data)
+
+
+
+# COPY VS VIEW
+
+var = np.array([1,2,3,4])
+
+co = var.copy()
+
+var[1] = 40
+
+print(var)
+print(co)
+
+
+x = np.array([9,8,7,6,5])
+
+vi = x.view()
+x[1] = 40
+print(x)
+print(vi)
