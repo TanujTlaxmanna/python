@@ -539,43 +539,43 @@ import numpy as np
 
 # 1-D
 
-var = np.array([1,2,3,4])
-var1 = np.array([9,8,7,6])
+# var = np.array([1,2,3,4])
+# var1 = np.array([9,8,7,6])
 
-ar = np.concatenate((var, var1))
-print(ar)
+# ar = np.concatenate((var, var1))
+# print(ar)
 
 
 # 2-D
 
-vr = np.array([[1,2],[3,4]])
-vr1 = np.array([[9,8],[7,6]])
+# vr = np.array([[1,2],[3,4]])
+# vr1 = np.array([[9,8],[7,6]])
 
-ar_1 = np.concatenate((vr, vr1), axis = 1)
-print(ar_1)
+# ar_1 = np.concatenate((vr, vr1), axis = 1)
+# print(ar_1)
 
-ar_0 = np.concatenate((vr, vr1), axis = 0)
-print(ar_0)
+# ar_0 = np.concatenate((vr, vr1), axis = 0)
+# print(ar_0)
 
 
 
-var_1 = np.array([1,2,3,4])
-var_2 = np.array([9,8,7,6])
+# var_1 = np.array([1,2,3,4])
+# var_2 = np.array([9,8,7,6])
 
-ar_0 = np.stack((var_1, var_2), axis = 0)
-print(ar_0)
+# ar_0 = np.stack((var_1, var_2), axis = 0)
+# print(ar_0)
 
-ar_1 = np.stack((var_1, var_2), axis = 1)
-print(ar_1)
+# ar_1 = np.stack((var_1, var_2), axis = 1)
+# print(ar_1)
 
-ar_ = np.hstack((var_1, var_2))   # HORIZONTAL STACK
-print(ar_)
+# ar_ = np.hstack((var_1, var_2))   # HORIZONTAL STACK
+# print(ar_)
 
-ar_ = np.vstack((var_1, var_2))   # VERTICAL STACK
-print(ar_)
+# ar_ = np.vstack((var_1, var_2))   # VERTICAL STACK
+# print(ar_)
 
-ar_ = np.dstack((var_1, var_2))   # STACKING ALONG HEIGHT
-print(ar_)
+# ar_ = np.dstack((var_1, var_2))   # STACKING ALONG HEIGHT
+# print(ar_)
 
 
 
@@ -583,27 +583,77 @@ print(ar_)
 
 # 1-D
 
-var = np.array([1,2,3,4,5,6])
-print(var)
+# var = np.array([1,2,3,4,5,6])
+# print(var)
 
-ar = np.array_split(var, 3)   # This creates 3 new array with data split within them in order
-print(ar)
+# ar = np.array_split(var, 3)   # This creates 3 new array with data split within them in order
+# print(ar)
 
-print(ar[0])
-print(ar[1])
-print(ar[2])
+# print(ar[0])
+# print(ar[1])
+# print(ar[2])
 
 # 2-D
 
-var1 = np.array([[1,2],[3,4],[5,6]])
-print(var1)
+# var1 = np.array([[1,2],[3,4],[5,6]])
+# print(var1)
 
-ar = np.array_split(var1, 3)   # This creates 3 new array with data split within them in order
-print(ar)
+# ar = np.array_split(var1, 3)   # This creates 3 new array with data split within them in order
+# print(ar)
 
-print(ar[0][:])
-print(ar[0][:])
-print(ar[0][:])
+# print(ar[0][:])
+# print(ar[0][:])
+# print(ar[0][:])
 
-ar_2 = np.array_split(var1, 3, axis = 1)
-print(ar_2)
+# ar_2 = np.array_split(var1, 3, axis = 1)
+# print(ar_2)
+
+
+
+
+# SEARCH
+
+var = np.array([1,2,3,4,2,5,2,5,6,7])
+
+x = np.where(var == 2)
+print(x)
+
+x = np.where((var%2) == 0)
+print(x)
+
+
+# SEARCH SORT
+
+var1 = np.array([1,2,3,4,5,6,7,8,9])
+
+x1 = np.searchsorted(var1, 5)
+print(x1)
+
+x1 = np.searchsorted(var1, [5,6,7], side = "right")   # Starts searching from right side
+print(x1)
+
+
+
+# SORT
+
+var_1 = np.array([4,2,3,1,22,12,15,5,6,7])
+print(np.sort(var_1))
+
+
+var_2 = np.array(["a", "s", "d", "f"])
+print(np.sort(var_2))
+
+
+var_3 = np.array([[4,2,3],[1,22,12],[15,5,6]])  # 2-D ARRAY
+print(np.sort(var_3))
+
+
+
+# FILTER
+
+var_4 = np.array(["a", "s", "d", "f"])
+f = [True, False, False, True]
+
+new_a = var_4[f]
+print(new_a)
+print(type(new_a))
