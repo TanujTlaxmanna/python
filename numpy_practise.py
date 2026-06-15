@@ -707,45 +707,116 @@ import numpy as np
 
 # INSERT
 
-var = np.array([1,2,3,4])
-print(var)
-print(var.dtype)
+# var = np.array([1,2,3,4])
+# print(var)
+# print(var.dtype)
 
-v = np.insert(var, 2, 40)
-print(v)
+# v = np.insert(var, 2, 40)
+# print(v)
 
-v = np.insert(var, (2,3,4), 40)   # This will only assign integer value and no floating
-print(v)
+# v = np.insert(var, (2,3,4), 40)   # This will only assign integer value and no floating
+# print(v)
 
-x = np.append(var, 6.5)
-print(x)
+# x = np.append(var, 6.5)
+# print(x)
 
 # 2-D
 
-var1 = np.array([[1,2,3], [4,5,6]])
-v1 = np.insert(var1, 2, 6, axis = 0)
-print(v1)
+# var1 = np.array([[1,2,3], [4,5,6]])
+# v1 = np.insert(var1, 2, 6, axis = 0)
+# print(v1)
 
-v1 = np.insert(var1, 2, [22,23], axis = 1)
-print(v1)
+# v1 = np.insert(var1, 2, [22,23], axis = 1)
+# print(v1)
 
-v1 = np.insert(var1, 2, 6, axis = 1)
-print(v1)
+# v1 = np.insert(var1, 2, 6, axis = 1)
+# print(v1)
 
-v1 = np.insert(var1, 2, [22,23], axis = 1)
-print(v1)
+# v1 = np.insert(var1, 2, [22,23], axis = 1)
+# print(v1)
 
-v1 = np.append(var1, [[45,23,42]], axis = 0)
-print(v1)
+# v1 = np.append(var1, [[45,23,42]], axis = 0)
+# print(v1)
 
 
 
 
 # DELETE
 
-var2 = np.array([1,2,3,4])
-print(var2)
-print(var2.dtype)
+# var2 = np.array([1,2,3,4])
+# print(var2)
+# print(var2.dtype)
 
-d = np.delete(var2, 2)
-print(d)
+# d = np.delete(var2, 2)
+# print(d)
+
+
+
+# MATRIX
+
+var = np.matrix([[1,2,3], [1,2,3]])
+print(var)
+
+var1 = np.array([[1,2,3], [1,2,3]])
+print(var1)
+
+print(type(var))
+print(type(var1))
+
+var2 = np.matrix([[1,2,3], [1,2,3]])
+
+print(var + var2)
+print(var - var2)
+
+vr = np.matrix([[1,2], [1,2]])
+vr2 = np.matrix([[1,2], [1,2]])
+print(vr.dot(vr2))
+
+
+
+# MATRIX FUNCTIONS
+
+# TRANSPOSE
+
+var = np.matrix([[1,2,3], [4,5,6]])
+print(var)
+
+print(np.transpose(var))
+print(var.T)
+
+
+# SWAPAXES
+
+var = np.matrix([[1,2,3], [4,5,6]])
+print(var)
+
+print(np.swapaxes(var,0 ,1))
+
+var2 = np.matrix([[1,2],[3,4]])
+print(var2)
+print(np.swapaxes(var2, 0, 1))
+
+
+# INVERSE MATRIX
+
+var3 = np.matrix([[1,2],[3,4]])
+print(var3)
+print(np.linalg.inv(var3))
+
+
+
+# POWER OF MATRIX
+
+var4 = np.matrix([[1,2],[3,4]])
+print(var4)
+print(np.linalg.matrix_power(var4, 2))
+print(np.linalg.matrix_power(var4, 0))
+print(np.linalg.matrix_power(var4, -2))
+
+
+
+# DETERMINANT
+
+var5 = np.matrix([[1,23,41],[3,2,4], [5,14,23]])
+print(var5)
+print(np.linalg.det(var5))
