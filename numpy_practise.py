@@ -462,52 +462,52 @@ import numpy as np
 
 # 1-D
 
-var = np.array([1,2,3,4,5,6,7,8])
-print(var)
-print()
-for i in var:
-    print(i)
+# var = np.array([1,2,3,4,5,6,7,8])
+# print(var)
+# print()
+# for i in var:
+#     print(i)
 
 
 # 2-D
 
-var1 = np.array([[1,2,3,4], [5,6,7,8]])
-print(var1)
-print()
-for j in var1:
-    print(j)
+# var1 = np.array([[1,2,3,4], [5,6,7,8]])
+# print(var1)
+# print()
+# for j in var1:
+#     print(j)
 
-print()
+# print()
 
-for k in var1:
-    for l in k:
-        print(l)
+# for k in var1:
+#     for l in k:
+#         print(l)
 
 
 # 3-D
 
-var3 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
-print(var3)
-print()
+# var3 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
+# print(var3)
+# print()
 
-for i in var3:
-    for j in i:
-        for k in j:
-            print(k)
+# for i in var3:
+#     for j in i:
+#         for k in j:
+#             print(k)
 
 # without using for loop
 
-var4 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
-print(var4)
-print()
+# var4 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
+# print(var4)
+# print()
 
-for i in np.nditer(var4):
-    print(i)
+# for i in np.nditer(var4):
+#     print(i)
 
-for i in np.nditer(var4, flags = ['buffered'], op_dtypes = ["S"]): # nditer stands for N-dimensional iterator. flags=['buffered'] creates a temporary buffer where converted values are stored. Original Array [1, 2, 3] ↓ Convert temporarily [b'1', b'2', b'3'] ↓ Iterate
-    print(i)
+# for i in np.nditer(var4, flags = ['buffered'], op_dtypes = ["S"]): # nditer stands for N-dimensional iterator. flags=['buffered'] creates a temporary buffer where converted values are stored. Original Array [1, 2, 3] ↓ Convert temporarily [b'1', b'2', b'3'] ↓ Iterate
+#     print(i)
 
 # for indexing
 
-for i,data in np.ndenumerate(var4):
-    print(i,data)
+# for i,data in np.ndenumerate(var4):
+#     print(i,data)
