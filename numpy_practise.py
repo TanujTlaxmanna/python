@@ -407,51 +407,107 @@ import numpy as np
 
 # 1-D
 
-var = np.array([9,8,7,6])
-print(var[1])
-print(var[-3])
+# var = np.array([9,8,7,6])
+# print(var[1])
+# print(var[-3])
 
 # 2-D
 
-var1 = np.array([[9,8,7], [4,5,6]])
-print(var1)
-print(var1.ndim)
-print()
-print(var1[0][1]) 
-print(var1[0,1])
+# var1 = np.array([[9,8,7], [4,5,6]])
+# print(var1)
+# print(var1.ndim)
+# print()
+# print(var1[0][1]) 
+# print(var1[0,1])
 
 # 3-D
 
-var2 = np.array([[[1,2], [3,4], [5,6]]])
-print(var2)
-print(var2.ndim)
-print(var2[0][2][1])
-print(var2[0,2,1])
+# var2 = np.array([[[1,2], [3,4], [5,6]]])
+# print(var2)
+# print(var2.ndim)
+# print(var2[0][2][1])
+# print(var2[0,2,1])
 
 
 # SLICING
 
 # 1-D
 
-var = np.array([1,2,3,4,5,6,7,8,9,0])
-print(var)
-print()
-print(var[1:5])
-print(var[2:])
-print(var[:6])
-print(var[::2])
-print(var[:-1])
-print(var[:10])
+# var = np.array([1,2,3,4,5,6,7,8,9,0])
+# print(var)
+# print()
+# print(var[1:5])
+# print(var[2:])
+# print(var[:6])
+# print(var[::2])
+# print(var[:-1])
+# print(var[:10])
 
 # 2-D
 
-var1 = np.array([[1,2,3,4,5], [9,8,7,6,5], [11,12,13,14,15]])
-print(var1)
-print(var1[1,1:])
+# var1 = np.array([[1,2,3,4,5], [9,8,7,6,5], [11,12,13,14,15]])
+# print(var1)
+# print(var1[1,1:])
 
 
 # 3-D
 
-var2 = np.array([[[1,2,3,4], [5,6,7,8], [9,10,11,12]]])
-print(var2)
-print(var2[0,2,:])
+# var2 = np.array([[[1,2,3,4], [5,6,7,8], [9,10,11,12]]])
+# print(var2)
+# print(var2[0,2,:])
+
+
+
+# ITERATIONS IN ARRAYS
+
+# 1-D
+
+var = np.array([1,2,3,4,5,6,7,8])
+print(var)
+print()
+for i in var:
+    print(i)
+
+
+# 2-D
+
+var1 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var1)
+print()
+for j in var1:
+    print(j)
+
+print()
+
+for k in var1:
+    for l in k:
+        print(l)
+
+
+# 3-D
+
+var3 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
+print(var3)
+print()
+
+for i in var3:
+    for j in i:
+        for k in j:
+            print(k)
+
+# without using for loop
+
+var4 = np.array([[[1,2,3], [4,5,6], [7,8,9]]])
+print(var4)
+print()
+
+for i in np.nditer(var4):
+    print(i)
+
+for i in np.nditer(var4, flags = ['buffered'], op_dtypes = ["S"]): # nditer stands for N-dimensional iterator. flags=['buffered'] creates a temporary buffer where converted values are stored. Original Array [1, 2, 3] ↓ Convert temporarily [b'1', b'2', b'3'] ↓ Iterate
+    print(i)
+
+# for indexing
+
+for i,data in np.ndenumerate(var4):
+    print(i,data)
