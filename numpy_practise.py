@@ -662,45 +662,90 @@ import numpy as np
 
 # SHUFFLE
 
-var = np.array([1,2,3,4,5])
-np.random.shuffle(var)
-print(var)
+# var = np.array([1,2,3,4,5])
+# np.random.shuffle(var)
+# print(var)
 
 
 # UNIQUE
 
-var1 = np.array([1,2,3,4,2,3,4,6,7])
-x = np.unique(var1)
-print(x)
+# var1 = np.array([1,2,3,4,2,3,4,6,7])
+# x = np.unique(var1)
+# print(x)
 
-x = np.unique(var1, return_index = True)
-print(x)
+# x = np.unique(var1, return_index = True)
+# print(x)
 
-x = np.unique(var1, return_counts = True)
-print(x)
+# x = np.unique(var1, return_counts = True)
+# print(x)
 
 
 # RESIZE
 
-var2 = np.array([1,2,3,4,5,6])
-y = np.resize(var2, (2,3))
-print(y)
+# var2 = np.array([1,2,3,4,5,6])
+# y = np.resize(var2, (2,3))
+# print(y)
 
-y = np.resize(var2, (3,2))
-print(y)
+# y = np.resize(var2, (3,2))
+# print(y)
 
 
 # FLATTEN AND RAVEL   # THIS CONVERTS 2-D ARRAY INTO 1-D ARRAY
 
-var3 = np.array([1,2,3,4,5,6])
-y = np.resize(var2, (3,2))
-print(y) 
+# var3 = np.array([1,2,3,4,5,6])
+# y = np.resize(var2, (3,2))
+# print(y) 
 
-print(y.flatten())
-print(y.flatten(order = "F"))
+# print(y.flatten())
+# print(y.flatten(order = "F"))
 
-print(np.ravel(y))
-print(np.ravel(y, order = "A"))
+# print(np.ravel(y))
+# print(np.ravel(y, order = "A"))
 
 
 
+
+# INSERT
+
+var = np.array([1,2,3,4])
+print(var)
+print(var.dtype)
+
+v = np.insert(var, 2, 40)
+print(v)
+
+v = np.insert(var, (2,3,4), 40)   # This will only assign integer value and no floating
+print(v)
+
+x = np.append(var, 6.5)
+print(x)
+
+# 2-D
+
+var1 = np.array([[1,2,3], [4,5,6]])
+v1 = np.insert(var1, 2, 6, axis = 0)
+print(v1)
+
+v1 = np.insert(var1, 2, [22,23], axis = 1)
+print(v1)
+
+v1 = np.insert(var1, 2, 6, axis = 1)
+print(v1)
+
+v1 = np.insert(var1, 2, [22,23], axis = 1)
+print(v1)
+
+v1 = np.append(var1, [[45,23,42]], axis = 0)
+print(v1)
+
+
+
+
+# DELETE
+
+var2 = np.array([1,2,3,4])
+print(var2)
+print(var2.dtype)
+
+d = np.delete(var2, 2)
+print(d)
