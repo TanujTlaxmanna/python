@@ -149,56 +149,98 @@ import numpy as np
 
 # DATA TYPES
 
-var1 = np.array([1,2,3,4,5,6,7,8,9,8,7,6,5,4,43,32,1,5235,321,4,55,3,532,532,5])
-print("Data Type : ", var1.dtype)
+# var1 = np.array([1,2,3,4,5,6,7,8,9,8,7,6,5,4,43,32,1,5235,321,4,55,3,532,532,5])
+# print("Data Type : ", var1.dtype)
 
-var2 = np.array([1.0, 2.2, 3.3, 4.0])
-print("Data Type : ", var2.dtype)
+# var2 = np.array([1.0, 2.2, 3.3, 4.0])
+# print("Data Type : ", var2.dtype)
 
-var3 = np.array(["A", "B", "C", "D"])
-print("Data Type : ", var3.dtype)
+# var3 = np.array(["A", "B", "C", "D"])
+# print("Data Type : ", var3.dtype)
 
-var4 = np.array(["A", "B", "C", "D", 1, 2, 3, 4])
-print("Data Type : ", var4.dtype)
+# var4 = np.array(["A", "B", "C", "D", 1, 2, 3, 4])
+# print("Data Type : ", var4.dtype)
 
 
 # ARRAY CONVERSION
 
-x = np.array([1,2,3,4])
-print("Data Type : ", x.dtype)
+# x = np.array([1,2,3,4])
+# print("Data Type : ", x.dtype)
 
-x = np.array([1,2,3,4], dtype = np.int8)
-print("Data Type : ", x.dtype)
+# x = np.array([1,2,3,4], dtype = np.int8)
+# print("Data Type : ", x.dtype)
 
 
-x1 = np.array([1,2,3,4], dtype = "f")
-print("Data Type : ", x1.dtype)
+# x1 = np.array([1,2,3,4], dtype = "f")
+# print("Data Type : ", x1.dtype)
 
-x2 = np.array([1,2,3,4])
-new = np.float32(x2)
+# x2 = np.array([1,2,3,4])
+# new = np.float32(x2)
 
-print("Data Type : ", x2.dtype)
-print("Data Type : ", new.dtype)
+# print("Data Type : ", x2.dtype)
+# print("Data Type : ", new.dtype)
+# print(x2)
+# print(new)
+
+
+# x2 = np.array([1,2,3,4])
+# new = np.float32(x2)
+# new_1 = np.int_(new)
+
+# print("Data Type : ", x2.dtype)
+# print("Data Type : ", new.dtype)
+# print("Data Type : ", new_1)
+# print(x2)
+# print(new)
+# print(new_1)
+
+
+
+# x3 = np.array([1,2,3,4])
+# new1 = x3.astype(float)
+# print("Data Type : ", x3)
+# print("Data Type : ", new1)
+# print(x3)
+# print(new)
+
+
+
+# ARRAY SHAPES
+
+var = np.array([[1,2,3,4], [3,4,5,6]])
+print(var, "\n")
+print(var.shape)
+
+
+var1 = np.array([1,2,3,4], ndmin = 10)
+print(var1, "\n")
+print(var1.ndim, "\n")
+print(var1.shape)
+
+
+# RESHAPE
+
+var2 = np.array([1,2,3,4,5,6])
+x = var2.reshape(3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+print(var2, "\n")
+print(x)
+print(var2.ndim)
+print(x.ndim)
+
+var3 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+x2 = var3.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+print(var3, "\n")
 print(x2)
-print(new)
+print(var3.ndim)
+print(x2.ndim)
 
-
-x2 = np.array([1,2,3,4])
-new = np.float32(x2)
-new_1 = np.int_(new)
-
-print("Data Type : ", x2.dtype)
-print("Data Type : ", new.dtype)
-print("Data Type : ", new_1)
-print(x2)
-print(new)
-print(new_1)
-
-
-
-x3 = np.array([1,2,3,4])
-new1 = x3.astype(float)
-print("Data Type : ", x3)
-print("Data Type : ", new1)
+var4 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+x3 = var4.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+print(var4, "\n")
 print(x3)
-print(new)
+print(var4.ndim)
+print(x3.ndim, "\n")
+
+ones = x3.reshape(-1)  # Makes it a 1-D array
+print(ones)
+print(ones.ndim)
