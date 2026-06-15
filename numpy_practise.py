@@ -754,23 +754,23 @@ import numpy as np
 
 # MATRIX
 
-var = np.matrix([[1,2,3], [1,2,3]])
-print(var)
+# var = np.matrix([[1,2,3], [1,2,3]])
+# print(var)
 
-var1 = np.array([[1,2,3], [1,2,3]])
-print(var1)
+# var1 = np.array([[1,2,3], [1,2,3]])
+# print(var1)
 
-print(type(var))
-print(type(var1))
+# print(type(var))
+# print(type(var1))
 
-var2 = np.matrix([[1,2,3], [1,2,3]])
+# var2 = np.matrix([[1,2,3], [1,2,3]])
 
-print(var + var2)
-print(var - var2)
+# print(var + var2)
+# print(var - var2)
 
-vr = np.matrix([[1,2], [1,2]])
-vr2 = np.matrix([[1,2], [1,2]])
-print(vr.dot(vr2))
+# vr = np.matrix([[1,2], [1,2]])
+# vr2 = np.matrix([[1,2], [1,2]])
+# print(vr.dot(vr2))
 
 
 
@@ -778,45 +778,45 @@ print(vr.dot(vr2))
 
 # TRANSPOSE
 
-var = np.matrix([[1,2,3], [4,5,6]])
-print(var)
+# var = np.matrix([[1,2,3], [4,5,6]])
+# print(var)
 
-print(np.transpose(var))
-print(var.T)
+# print(np.transpose(var))
+# print(var.T)
 
 
 # SWAPAXES
 
-var = np.matrix([[1,2,3], [4,5,6]])
-print(var)
+# var = np.matrix([[1,2,3], [4,5,6]])
+# print(var)
 
-print(np.swapaxes(var,0 ,1))
+# print(np.swapaxes(var,0 ,1))
 
-var2 = np.matrix([[1,2],[3,4]])
-print(var2)
-print(np.swapaxes(var2, 0, 1))
+# var2 = np.matrix([[1,2],[3,4]])
+# print(var2)
+# print(np.swapaxes(var2, 0, 1))
 
 
 # INVERSE MATRIX
 
-var3 = np.matrix([[1,2],[3,4]])
-print(var3)
-print(np.linalg.inv(var3))
+# var3 = np.matrix([[1,2],[3,4]])
+# print(var3)
+# print(np.linalg.inv(var3))
 
 
 
 # POWER OF MATRIX
 
-var4 = np.matrix([[1,2],[3,4]])
-print(var4)
-print(np.linalg.matrix_power(var4, 2))
-print(np.linalg.matrix_power(var4, 0))
-print(np.linalg.matrix_power(var4, -2))
+# var4 = np.matrix([[1,2],[3,4]])
+# print(var4)
+# print(np.linalg.matrix_power(var4, 2))
+# print(np.linalg.matrix_power(var4, 0))
+# print(np.linalg.matrix_power(var4, -2))
 
 
 
 # DETERMINANT
 
-var5 = np.matrix([[1,23,41],[3,2,4], [5,14,23]])
-print(var5)
-print(np.linalg.det(var5))
+# var5 = np.matrix([[1,23,41],[3,2,4], [5,14,23]])
+# print(var5)
+# print(np.linalg.det(var5))
