@@ -613,47 +613,94 @@ import numpy as np
 
 # SEARCH
 
-var = np.array([1,2,3,4,2,5,2,5,6,7])
+# var = np.array([1,2,3,4,2,5,2,5,6,7])
 
-x = np.where(var == 2)
-print(x)
+# x = np.where(var == 2)
+# print(x)
 
-x = np.where((var%2) == 0)
-print(x)
+# x = np.where((var%2) == 0)
+# print(x)
 
 
 # SEARCH SORT
 
-var1 = np.array([1,2,3,4,5,6,7,8,9])
+# var1 = np.array([1,2,3,4,5,6,7,8,9])
 
-x1 = np.searchsorted(var1, 5)
-print(x1)
+# x1 = np.searchsorted(var1, 5)
+# print(x1)
 
-x1 = np.searchsorted(var1, [5,6,7], side = "right")   # Starts searching from right side
-print(x1)
+# x1 = np.searchsorted(var1, [5,6,7], side = "right")   # Starts searching from right side
+# print(x1)
 
 
 
 # SORT
 
-var_1 = np.array([4,2,3,1,22,12,15,5,6,7])
-print(np.sort(var_1))
+# var_1 = np.array([4,2,3,1,22,12,15,5,6,7])
+# print(np.sort(var_1))
 
 
-var_2 = np.array(["a", "s", "d", "f"])
-print(np.sort(var_2))
+# var_2 = np.array(["a", "s", "d", "f"])
+# print(np.sort(var_2))
 
 
-var_3 = np.array([[4,2,3],[1,22,12],[15,5,6]])  # 2-D ARRAY
-print(np.sort(var_3))
+# var_3 = np.array([[4,2,3],[1,22,12],[15,5,6]])  # 2-D ARRAY
+# print(np.sort(var_3))
 
 
 
 # FILTER
 
-var_4 = np.array(["a", "s", "d", "f"])
-f = [True, False, False, True]
+# var_4 = np.array(["a", "s", "d", "f"])
+# f = [True, False, False, True]
 
-new_a = var_4[f]
-print(new_a)
-print(type(new_a))
+# new_a = var_4[f]
+# print(new_a)
+# print(type(new_a))
+
+
+
+# SHUFFLE
+
+var = np.array([1,2,3,4,5])
+np.random.shuffle(var)
+print(var)
+
+
+# UNIQUE
+
+var1 = np.array([1,2,3,4,2,3,4,6,7])
+x = np.unique(var1)
+print(x)
+
+x = np.unique(var1, return_index = True)
+print(x)
+
+x = np.unique(var1, return_counts = True)
+print(x)
+
+
+# RESIZE
+
+var2 = np.array([1,2,3,4,5,6])
+y = np.resize(var2, (2,3))
+print(y)
+
+y = np.resize(var2, (3,2))
+print(y)
+
+
+# FLATTEN AND RAVEL   # THIS CONVERTS 2-D ARRAY INTO 1-D ARRAY
+
+var3 = np.array([1,2,3,4,5,6])
+y = np.resize(var2, (3,2))
+print(y) 
+
+print(y.flatten())
+print(y.flatten(order = "F"))
+
+print(np.ravel(y))
+print(np.ravel(y, order = "A"))
+
+
+
