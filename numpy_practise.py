@@ -207,40 +207,196 @@ import numpy as np
 
 # ARRAY SHAPES
 
-var = np.array([[1,2,3,4], [3,4,5,6]])
-print(var, "\n")
-print(var.shape)
+# var = np.array([[1,2,3,4], [3,4,5,6]])
+# print(var, "\n")
+# print(var.shape)
 
 
-var1 = np.array([1,2,3,4], ndmin = 10)
-print(var1, "\n")
-print(var1.ndim, "\n")
-print(var1.shape)
+# var1 = np.array([1,2,3,4], ndmin = 10)
+# print(var1, "\n")
+# print(var1.ndim, "\n")
+# print(var1.shape)
 
 
 # RESHAPE
 
-var2 = np.array([1,2,3,4,5,6])
-x = var2.reshape(3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
-print(var2, "\n")
-print(x)
-print(var2.ndim)
-print(x.ndim)
+# var2 = np.array([1,2,3,4,5,6])
+# x = var2.reshape(3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+# print(var2, "\n")
+# print(x)
+# print(var2.ndim)
+# print(x.ndim)
 
-var3 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
-x2 = var3.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
-print(var3, "\n")
-print(x2)
-print(var3.ndim)
-print(x2.ndim)
+# var3 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+# x2 = var3.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+# print(var3, "\n")
+# print(x2)
+# print(var3.ndim)
+# print(x2.ndim)
 
-var4 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
-x3 = var4.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
-print(var4, "\n")
-print(x3)
-print(var4.ndim)
-print(x3.ndim, "\n")
+# var4 = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+# x3 = var4.reshape(2,3,2)  # ONLY WORKS WHEN THERE ARE SUFFIECIENT NUMBER OF ELEMENTS AS NUMPY DOES NOT WORK WITH BLANK ELEMENTS 
+# print(var4, "\n")
+# print(x3)
+# print(var4.ndim)
+# print(x3.ndim, "\n")
 
-ones = x3.reshape(-1)  # Makes it a 1-D array
-print(ones)
-print(ones.ndim)
+# ones = x3.reshape(-1)  # Makes it a 1-D array
+# print(ones)
+# print(ones.ndim)
+
+
+
+# ARITHEMETIC OPERATIONS
+
+# 1-D ARRAY
+
+var = np.array([1,2,3,4])
+var_add = var + 3
+print(var_add) # Adds all with 3
+
+var1 = np.array([1,2,3,4])
+var2 = np.array([5,6,7,8])
+
+var_add1 = var1 + var2
+print(var_add1)  # Adds both arrays
+
+varadds = np.add(var1, 3)
+print(varadds)
+
+varadds = np.add(var1, var2)
+print(varadds)
+
+
+
+var1 = np.array([1,2,3,4])
+var2 = np.array([5,6,7,8])
+
+var_add1 = var1 - var2
+print(var_add1)  # Subtracts both arrays
+
+varadds = np.subtract(var1, 3)
+print(varadds)
+
+varadds = np.subtract(var1, var2)
+print(varadds)
+
+
+
+
+var1 = np.array([1,2,3,4])
+var2 = np.array([5,6,7,8])
+
+var_add1 = var1 * var2
+print(var_add1)  # Multiplies both arrays
+
+varadds = np.multiply(var1, 3)
+print(varadds)
+
+varadds = np.multiply(var1, var2)
+print(varadds)
+
+
+
+
+var1 = np.array([1,2,3,4])
+var2 = np.array([5,6,7,8])
+
+var_add1 = var1 / var2
+print(var_add1.round(3))  # Divides both arrays
+
+varadds = np.divide(var1, 3)
+print(varadds)
+
+varadds = np.divide(var1, var2)
+print(varadds)
+
+
+
+
+var1 = np.array([1,2,3,4])
+var2 = np.array([5,6,7,8])
+
+var_add1 = var1 % var2
+print(var_add1)  # Modulus both arrays
+
+varadds = np.mod(var1, 3)
+print(varadds)
+
+varadds = np.mod(var1, var2)
+print(varadds)
+
+
+# 2-D ARRAY
+
+var21 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var21)
+print() 
+var22 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var22)
+print()
+varadd2 = var21 + var22  # ADDS BOTH ARRAY
+print("\n", varadd2)
+
+
+
+var21 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var21)
+print() 
+var22 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var22)
+print()
+varadd2 = var21 - var22  # SUBTRACTS BOTH ARRAY
+print("\n", varadd2)
+
+
+var21 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var21)
+print() 
+var22 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var22)
+print()
+varadd2 = var21 * var22  # MULTIPLIES BOTH ARRAY
+print("\n", varadd2)
+
+
+
+var21 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var21)
+print() 
+var22 = np.array([[1,2,3,4], [5,6,7,8]])
+print(var22)
+print()
+varadd2 = var21 / var22  # DIVIDES BOTH ARRAY
+print("\n", varadd2.round(2))
+
+
+varzz = np.array([1,2,3,4])
+varrec = np.reciprocal(varzz)
+print(varrec)
+
+
+
+# ARITHEMETIC FUNCTIONS
+
+var = np.array([1,2,3,4,5,6,77])
+print(np.min(var))
+print(np.max(var))
+print(np.argmin(var))
+print(np.argmax(var))
+
+
+var1 = np.array([[2,1,3], [9,5,6]])
+print(np.min(var1, axis = 1))   # ROW WISE
+print(np.max(var1, axis = 1))
+print(np.argmin(var1, axis = 1))
+print(np.argmax(var1, axis = 1))
+print(np.min(var1, axis = 0))   # COLUMN WISE
+print(np.max(var1, axis = 0))
+print(np.argmin(var1, axis = 0))
+print(np.argmax(var1, axis = 0))
+
+print(np.sqrt(var))
+print(np.sin(var))
+print(np.cos(var))
+print(np.cumsum(var))
