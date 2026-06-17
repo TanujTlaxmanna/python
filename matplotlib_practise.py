@@ -668,23 +668,48 @@ import matplotlib.pyplot as plt
 # plt.show()    
 
 
-x = [1,2,3,4]
-y = [1,2,3,4]
+# x = [1,2,3,4]
+# y = [1,2,3,4]
 
+# plt.plot(x, y, color = 'r')
+# plt.subplot(3, 3, 1)
+
+# plt.pie([1], colors = 'r')
+# plt.subplot(3, 3, 3)
+
+# x1 = [10,20,30,40]
+# plt.pie(x)
+# plt.subplot(3, 3, 7)
+
+# x2 = ['a', 'b', 'c', 'd', 'g']
+# y2 = [10,20,30,40,50]
+# plt.bar(x2, y2)
+# plt.subplot(3, 3, 9)
+
+
+# plt.show()
+
+
+# ---------------------------------------------------------------
+#  SAVEFIG
+# ---------------------------------------------------------------
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.plot(x, y)
+# plt.savefig(fname)
+# plt.show()
+
+
+x = [1,2,3,4,5]
+y = [2,4,3,8,1]
+
+plt.title("Line Graph", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15),
+plt.ylabel("Y-Axis", fontsize = 15)
 plt.plot(x, y, color = 'r')
-plt.subplot(3, 3, 1)
-
-plt.pie([1], colors = 'r')
-plt.subplot(3, 3, 3)
-
-x1 = [10,20,30,40]
-plt.pie(x)
-plt.subplot(3, 3, 7)
-
-x2 = ['a', 'b', 'c', 'd', 'g']
-y2 = [10,20,30,40,50]
-plt.bar(x2, y2)
-plt.subplot(3, 3, 9)
-
-
+plt.savefig("line", dpi = 2000, facecolor = 'lightpink')
+plt.savefig("line12.pdf", dpi = 2000, facecolor = 'lightpink')
+plt.savefig("line1234", dpi = 2000, facecolor = 'lightpink', transparent = True, bbox_inches = "tight") # False by default
 plt.show()
