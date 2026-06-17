@@ -622,34 +622,69 @@ import matplotlib.pyplot as plt
 # plt.fill_between()
 # plt.show()    
 
-x = [1,2,3,4,5]
-y = [1,2,3,4,5]
+# x = [1,2,3,4,5]
+# y = [1,2,3,4,5]
 
-plt.plot(x, y, color = "r")
-plt.fill_between(x, y)
-plt.title("python")  # Adding a title to the graph
-plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
-plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
-plt.show()
-
-
-plt.plot(x, y, color = "r")
-plt.fill_between(x = [2,4], y1= 2, y2 = 4, color = 'g')
-plt.title("python")  # Adding a title to the graph
-plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
-plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
-plt.show()
+# plt.plot(x, y, color = "r")
+# plt.fill_between(x, y)
+# plt.title("python")  # Adding a title to the graph
+# plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+# plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+# plt.show()
 
 
-import numpy as np 
+# plt.plot(x, y, color = "r")
+# plt.fill_between(x = [2,4], y1= 2, y2 = 4, color = 'g')
+# plt.title("python")  # Adding a title to the graph
+# plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+# plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+# plt.show()
 
 
-x = np.array([1,2,3,4,5])
-y = np.array([1,2,3,4,5])
+# import numpy as np 
 
-plt.plot(x, y, color = "r")
-plt.fill_between(x, y, color = 'g', where=(x>=2) & (x<=4), alpha = 0.6)
-plt.title("python")  # Adding a title to the graph
-plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
-plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+
+# x = np.array([1,2,3,4,5])
+# y = np.array([1,2,3,4,5])
+
+# plt.plot(x, y, color = "r")
+# plt.fill_between(x, y, color = 'g', where=(x>=2) & (x<=4), alpha = 0.6)
+# plt.title("python")  # Adding a title to the graph
+# plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+# plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+# plt.show()
+
+
+
+# ---------------------------------------------------------------
+#  SUBPLOT PLOT
+# ---------------------------------------------------------------
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.subplot(nrows, ncols, index)
+# plt.plot(x, y)
+# plt.show()    
+
+
+x = [1,2,3,4]
+y = [1,2,3,4]
+
+plt.plot(x, y, color = 'r')
+plt.subplot(3, 3, 1)
+
+plt.pie([1], colors = 'r')
+plt.subplot(3, 3, 3)
+
+x1 = [10,20,30,40]
+plt.pie(x)
+plt.subplot(3, 3, 7)
+
+x2 = ['a', 'b', 'c', 'd', 'g']
+y2 = [10,20,30,40,50]
+plt.bar(x2, y2)
+plt.subplot(3, 3, 9)
+
+
 plt.show()
