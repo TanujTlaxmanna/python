@@ -219,81 +219,159 @@ import matplotlib.pyplot as plt
 # plt.hist(x)
 # plt.show()
 
-import numpy as np
-import random
+# import numpy as np
+# import random
 
-x = np.random.randint(10, 60, 50)
-print(x) 
+# x = np.random.randint(10, 60, 50)
+# print(x) 
 
-number = [41, 36, 21, 41, 42, 31, 37, 39, 15, 20, 26, 12, 10, 44, 45, 14, 23, 42, 55, 42, 53, 58, 40, 54,
-          55, 46, 31, 41, 45, 48, 29, 24, 33, 11, 19, 50, 15, 27, 42, 14, 55, 36, 38, 55, 39, 45, 38, 26,
-          58, 27]
-bins = [10,20,30,40,50,60]
+# number = [41, 36, 21, 41, 42, 31, 37, 39, 15, 20, 26, 12, 10, 44, 45, 14, 23, 42, 55, 42, 53, 58, 40, 54,
+#           55, 46, 31, 41, 45, 48, 29, 24, 33, 11, 19, 50, 15, 27, 42, 14, 55, 36, 38, 55, 39, 45, 38, 26,
+#           58, 27]
+# bins = [10,20,30,40,50,60]
 
-plt.title("Histogram Plot", fontsize = 15)
-plt.xlabel("Python", fontsize = 15)
-plt.ylabel("Numbers", fontsize = 15)
+# plt.title("Histogram Plot", fontsize = 15)
+# plt.xlabel("Python", fontsize = 15)
+# plt.ylabel("Numbers", fontsize = 15)
 
-plt.hist(number)  # Plotting the histogram with default number of bins
-plt.show()
+# plt.hist(number)  # Plotting the histogram with default number of bins
+# plt.show()
 
-plt.hist(number, color = "r") # Plotting the histogram with red color 
-plt.show()
+# plt.hist(number, color = "r") # Plotting the histogram with red color 
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black") # Plotting the histogram with red color and black edge color
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black") # Plotting the histogram with red color and black edge color
+# plt.show()
 
-plt.hist(number, color = "r", bins = bins, edgecolor = "black") # Plotting the histogram with red color, custom bins and black edge color
-plt.show()
+# plt.hist(number, color = "r", bins = bins, edgecolor = "black") # Plotting the histogram with red color, custom bins and black edge color
+# plt.show()
 
+# plt.hist(number, color = "r", bins = "auto", range = (0,100),  edgecolor = "black") # Plotting the histogram with red color, automatic bins, custom range and black edge color
+# plt.show()
 
-plt.hist(number, color = "r", bins = "auto", range = (0,100),  edgecolor = "black") # Plotting the histogram with red color, automatic bins, custom range and black edge color
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", cumulative = -1) # Plotting the histogram with red color, black edge color and cumulative histogram, cumulative = -1 will plot the cumulative histogram in reverse order
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", cumulative = -1) # Plotting the histogram with red color, black edge color and cumulative histogram, cumulative = -1 will plot the cumulative histogram in reverse order
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", bottom = 10) # Plotting the histogram with bottom as 10 this will start the y axis with 10
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", bottom = 10) # Plotting the histogram with bottom as 10 this will start the y axis with 10
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", align = "left") # Plotting the histogram with left alignment, this is bydefault
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", align = "left") # Plotting the histogram with left alignment, this is bydefault
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", histtype = "step") # Plotting the histogram with step type, this will plot the histogram as a step function
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", histtype = "step") # Plotting the histogram with step type, this will plot the histogram as a step function
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", orientation = "horizontal") # Plotting the histogram with horizontal orientation, by default vertical
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", orientation = "horizontal") # Plotting the histogram with horizontal orientation, by default vertical
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", rwidth = 0.5) # Plotting the histogram with relative width of the bars, this will make the bars thinner
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", rwidth = 0.5) # Plotting the histogram with relative width of the bars, this will make the bars thinner
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", log = True) # Plotting the histogram with logarithmic scale, this will make the y axis logarithmic
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", log = True) # Plotting the histogram with logarithmic scale, this will make the y axis logarithmic
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", label = "Pythons")
+# plt.legend() # Adding legend to the histogram
+# plt.show()
 
-plt.hist(number, color = "r", edgecolor = "black", label = "Pythons")
-plt.legend() # Adding legend to the histogram
-plt.show()
-
-plt.hist(number, color = "r", edgecolor = "black", label = "Pyhtodns")
-plt.axvline(45, color = "b", linestyle = "dashed", linewidth = 2, label = "Mean") # Adding a vertical line to the histogram at x = 45
-plt.legend()
-plt.show()
+# plt.hist(number, color = "r", edgecolor = "black", label = "Pyhtodns")
+# plt.axvline(45, color = "b", linestyle = "dashed", linewidth = 2, label = "Mean") # Adding a vertical line to the histogram at x = 45
+# plt.legend()
+# plt.show()
 
 
 
 # ---------------------------------------------------------------
-#  PLOT
+#  PIE  PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
 # x = []
-# y = []
-# plt.(x, y)
+# plt.pie(x)
 # plt.show()
 
 
+x = [10,20,30,40]
+y = ["python", "c", "c++", "java"]
+ex = [0.0, 0.2, 0.0, 0.0] # explode will separate the slices of the pie chart, this is bydefault 0.0 for all slices
+c = ['r', 'g', 'b', 'y']
+plt.title("Pie Chart", fontsize = 15) # Adding title to the pie chart
+
+plt.pie(x) # Plotting basic pie chart
+plt.show()
+
+
+plt.pie(x, labels = y) # Plotting pie chart with labels
+plt.show()
+
+plt.pie(x, labels = y, colors = c, explode = ex) # Plotting labels with colors and explode
+plt.show()
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%") # Plotting pie chart with labels and percentage
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True) # Plotting pie chart with labels and percentage and shadow
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1) # Plotting pie chart with labels and percentage and shadow and bigger radius
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
+plt.show() 
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3)) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center
+plt.show()
+
+plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3), rotatelabels = True) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center and rotate labels
+plt.legend(loc = 2) # Adding legend to the pie chart, loc = 2 will place the legend at the upper left corner, Quadrant based 1,2,3,4
+plt.show()
+
+
+# DOT PIE CHART
+
+plt.pie([1]) 
+plt.show()
+
+# DONUT PIE CHART 
+
+
+x = [10,20,30,40]
+x1 = [40,30,20,10]
+y = ["python", "c", "c++", "java"]
+c = ['r', 'g', 'b', 'y']
+plt.title("Pie Chart", fontsize = 15)
+
+plt.pie(x, labels = y, radius = 1.5)
+plt.pie(x1, radius = 0.5, colors = c)
+plt.show()
+
+
+plt.pie(x, labels = y, radius = 1.5)
+plt.pie([1], colors = 'w') # Adding a white circle in the middle to create a donut chart ,instead of radius we can do [1] in the start of code
+plt.show()
+
+
+# SECOND METHOD FOR DONUT
+
+
+plt.pie(x, labels = y, radius = 1.5)
+cr = plt.Circle((0,0), 0.5, facecolor = "white") # Creating a white circle with radius 0.5
+plt.gca().add_artist(cr)
+
+plt.show()
 
 
 # ---------------------------------------------------------------
