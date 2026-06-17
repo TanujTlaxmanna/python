@@ -702,14 +702,54 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-x = [1,2,3,4,5]
-y = [2,4,3,8,1]
+# x = [1,2,3,4,5]
+# y = [2,4,3,8,1]
 
-plt.title("Line Graph", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15),
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.plot(x, y, color = 'r')
-plt.savefig("line", dpi = 2000, facecolor = 'lightpink')
-plt.savefig("line12.pdf", dpi = 2000, facecolor = 'lightpink')
-plt.savefig("line1234", dpi = 2000, facecolor = 'lightpink', transparent = True, bbox_inches = "tight") # False by default
-plt.show()
+# plt.title("Line Graph", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15),
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.plot(x, y, color = 'r')
+# plt.savefig("line", dpi = 2000, facecolor = 'lightpink')
+# plt.savefig("line12.pdf", dpi = 2000, facecolor = 'lightpink')
+# plt.savefig("line1234", dpi = 2000, facecolor = 'lightpink', transparent = True, bbox_inches = "tight") # False by default
+# plt.show()
+
+
+
+
+# AXIS FUNCTIONS
+
+# plt.xticks(x, labels=["python", "c", "c++", "java"])
+# plt.yticks(x)
+
+# plt.xlim(0,10)
+# plt.ylim(0,10)
+
+# plt.axis([0,10,0,7])  #x1,x2,y1,y2
+
+
+
+# x = [1,2,3,4,5]  # Creating x-axis values
+# y = [3,1,5,2,6]  # Creating y-axis values
+
+# plt.title("Wscube", fontsize=15)  # Adding a title with font size 15
+# plt.xlabel("Days", fontsize=15)  # Adding a label to the x-axis
+# plt.ylabel("Python", fontsize=15)  # Adding a label to the y-axis
+
+# plt.text(2, 5, "java", fontsize=15, style="italic",
+#          bbox={"facecolor":"red"})  # Adding custom text with a red background box
+
+# plt.annotate("python", xy=(2,1), xytext=(3,3),
+#              arrowprops=dict(facecolor="black", shrink=100))
+# Adding an annotation with an arrow pointing to a specific point
+
+# plt.legend(
+#     ["up"],                # Legend label
+#     loc=9,                 # Legend position (upper center)
+#     facecolor="red",       # Background color of the legend
+#     edgecolor="yellow",    # Border color of the legend
+#     framealpha=0.5,        # Transparency of the legend box
+#     shadow=True            # Displaying a shadow behind the legend
+# )
+
+# plt.show()  # Displaying the graph
