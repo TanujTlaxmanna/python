@@ -175,52 +175,110 @@ import matplotlib.pyplot as plt
 # plt.plot(y)
 # plt.show()
 
-import numpy as np
+# import numpy as np
 
-# x = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
-y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
-# plt.plot(x)
-plt.plot(y)  # Plotting graph with default color and line style
-plt.show()
+# # x = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
+# y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
+# # plt.plot(x)
+# plt.plot(y)  # Plotting graph with default color and line style
+# plt.show()
 
-plt.plot(y, color = "red") # Plotting graph with red line
-plt.show()
+# plt.plot(y, color = "red") # Plotting graph with red line
+# plt.show()
 
-plt.plot(y, color = "red", linestyle = "dashed") # Plotting graph with red dashed line
-plt.show()
+# plt.plot(y, color = "red", linestyle = "dashed") # Plotting graph with red dashed line
+# plt.show()
 
-plt.plot(y, color = "red", linestyle = "dashed", linewidth = 5) # Plotting graph with red dashed line and bigger line width 
-plt.show()
+# plt.plot(y, color = "red", linestyle = "dashed", linewidth = 5) # Plotting graph with red dashed line and bigger line width 
+# plt.show()
 
-plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10) # Plotting graph with red dashed line and bigger line width and markers
-plt.show()
+# plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10) # Plotting graph with red dashed line and bigger line width and markers
+# plt.show()
 
-plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5) # Plotting graph with red dashed line and bigger line width and markers and transparency
-plt.show()
+# plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5) # Plotting graph with red dashed line and bigger line width and markers and transparency
+# plt.show()
 
 
 # MULTIPLE LINE GRAPHS
 
-y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
-y1 = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
+# y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
+# y1 = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
 
-plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 1") # Plotting graph with red dashed line and bigger line width and markers and transparency
-plt.plot(y1, color = "green", linestyle = "solid", linewidth = 2, marker = "s", markerfacecolor = "yellow", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 2") # Plotting graph with green solid line and bigger line width and markers and transparency
-plt.legend(["women", "men"]) # Adding legend to the graph
-plt.show()
+# plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 1") # Plotting graph with red dashed line and bigger line width and markers and transparency
+# plt.plot(y1, color = "green", linestyle = "solid", linewidth = 2, marker = "s", markerfacecolor = "yellow", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 2") # Plotting graph with green solid line and bigger line width and markers and transparency
+# plt.legend(["women", "men"]) # Adding legend to the graph
+# plt.show()
 
 # ---------------------------------------------------------------
-#  PLOT
+#  HISTOGRAM PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
 # x = []
-# y = []
-# plt.(x, y)
+# plt.hist(x)
 # plt.show()
 
+import numpy as np
+import random
 
+x = np.random.randint(10, 60, 50)
+print(x) 
+
+number = [41, 36, 21, 41, 42, 31, 37, 39, 15, 20, 26, 12, 10, 44, 45, 14, 23, 42, 55, 42, 53, 58, 40, 54,
+          55, 46, 31, 41, 45, 48, 29, 24, 33, 11, 19, 50, 15, 27, 42, 14, 55, 36, 38, 55, 39, 45, 38, 26,
+          58, 27]
+bins = [10,20,30,40,50,60]
+
+plt.title("Histogram Plot", fontsize = 15)
+plt.xlabel("Python", fontsize = 15)
+plt.ylabel("Numbers", fontsize = 15)
+
+plt.hist(number)  # Plotting the histogram with default number of bins
+plt.show()
+
+plt.hist(number, color = "r") # Plotting the histogram with red color 
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black") # Plotting the histogram with red color and black edge color
+plt.show()
+
+plt.hist(number, color = "r", bins = bins, edgecolor = "black") # Plotting the histogram with red color, custom bins and black edge color
+plt.show()
+
+
+plt.hist(number, color = "r", bins = "auto", range = (0,100),  edgecolor = "black") # Plotting the histogram with red color, automatic bins, custom range and black edge color
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", cumulative = -1) # Plotting the histogram with red color, black edge color and cumulative histogram, cumulative = -1 will plot the cumulative histogram in reverse order
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", bottom = 10) # Plotting the histogram with bottom as 10 this will start the y axis with 10
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", align = "left") # Plotting the histogram with left alignment, this is bydefault
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", histtype = "step") # Plotting the histogram with step type, this will plot the histogram as a step function
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", orientation = "horizontal") # Plotting the histogram with horizontal orientation, by default vertical
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", rwidth = 0.5) # Plotting the histogram with relative width of the bars, this will make the bars thinner
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", log = True) # Plotting the histogram with logarithmic scale, this will make the y axis logarithmic
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", label = "Pythons")
+plt.legend() # Adding legend to the histogram
+plt.show()
+
+plt.hist(number, color = "r", edgecolor = "black", label = "Pyhtodns")
+plt.axvline(45, color = "b", linestyle = "dashed", linewidth = 2, label = "Mean") # Adding a vertical line to the histogram at x = 45
+plt.legend()
+plt.show()
 
 
 
