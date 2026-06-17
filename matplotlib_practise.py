@@ -589,22 +589,67 @@ import matplotlib.pyplot as plt
 # plt.step(x, y)
 # plt.show()
 
-x = [1,2,3,4,5]
-y = [4,2,6,1,5]
+# x = [1,2,3,4,5]
+# y = [4,2,6,1,5]
 
-plt.step(x,y)  # Plotting a step graph connecting points with horizontal and vertical lines
+# plt.step(x,y)  # Plotting a step graph connecting points with horizontal and vertical lines
+# plt.show()
+
+# plt.title("python")  # Adding a title to the graph
+# plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+# plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+# plt.step(x, y)  # Plotting a step graph
+# plt.grid()  # Displaying grid lines on the graph
+# plt.show()  # Displaying the graph
+
+# plt.title("python")  # Adding a title to the graph
+# plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+# plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+# plt.step(x, y, color='r', marker='o', ms=10, mfc='g', label='python')  # Plotting a red step graph with circle markers, marker size 10, green marker face color, and a label
+# plt.legend(loc = 2)
+# plt.show()
+
+
+
+# ---------------------------------------------------------------
+#  FILL_BETWEEN PLOT
+# ---------------------------------------------------------------
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.plot(x, y)
+# plt.fill_between()
+# plt.show()    
+
+x = [1,2,3,4,5]
+y = [1,2,3,4,5]
+
+plt.plot(x, y, color = "r")
+plt.fill_between(x, y)
+plt.title("python")  # Adding a title to the graph
+plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
 plt.show()
 
-plt.title("python")  # Adding a title to the graph
-plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
-plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
-plt.step(x, y)  # Plotting a step graph
-plt.grid()  # Displaying grid lines on the graph
-plt.show()  # Displaying the graph
 
+plt.plot(x, y, color = "r")
+plt.fill_between(x = [2,4], y1= 2, y2 = 4, color = 'g')
 plt.title("python")  # Adding a title to the graph
 plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
 plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
-plt.step(x, y, color='r', marker='o', ms=10, mfc='g', label='python')  # Plotting a red step graph with circle markers, marker size 10, green marker face color, and a label
-plt.legend(loc = 2)
+plt.show()
+
+
+import numpy as np 
+
+
+x = np.array([1,2,3,4,5])
+y = np.array([1,2,3,4,5])
+
+plt.plot(x, y, color = "r")
+plt.fill_between(x, y, color = 'g', where=(x>=2) & (x<=4), alpha = 0.6)
+plt.title("python")  # Adding a title to the graph
+plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
 plt.show()
