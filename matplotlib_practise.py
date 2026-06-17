@@ -385,32 +385,129 @@ import matplotlib.pyplot as plt
 # plt.stem(x, y)
 # plt.show()
 
-x = [1,2,3,4,5,6]
-y = [2,4,6,8,10,12]
+# x = [1,2,3,4,5,6]
+# y = [2,4,6,8,10,12]
 
-plt.stem(x, y) # Plotting the stem plot with default line style and marker
+# plt.stem(x, y) # Plotting the stem plot with default line style and marker
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":") # Plotting the stem plot with dotted line 
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o") # Plotting the stem plot with dotted line and circle marker and symbol
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4) # Plotting the stem plot with dotted line and circle marker and symbol and bottom value)
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label
+# plt.legend()
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection however use_line_collection is deprecated and will be removed in a future version
+# plt.legend()
+# plt.show()
+
+# plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python", orientation = "horizontal") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection and horizontal orientation
+# plt.legend()
+# plt.show()
+
+
+# ---------------------------------------------------------------
+#  BOX PLOT
+# ---------------------------------------------------------------
+
+
+# SYNTAX:
+# x = []
+# plt.boxplot(x)
+# plt.show()
+
+x = [10,20,30,40,50,60,70,80,90,100]
+
+plt.boxplot(x) # Plotting the box plot with default settings
 plt.show()
 
-plt.stem(x, y, linefmt = ":") # Plotting the stem plot with dotted line 
+plt.boxplot(x, notch = True) # Plotting the box plot with notch, notch will show the confidence interval of the median
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o") # Plotting the stem plot with dotted line and circle marker and symbol
+plt.boxplot(x, vert = False) # Plotting the box plot with horizontal orientation, by default vertical
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4) # Plotting the stem plot with dotted line and circle marker and symbol and bottom value)
+plt.boxplot(x, widths = 0.8) # Plotting the box width with different width (default = 0.2)
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color
+plt.boxplot(x, label = ["python"]) # Plotting the box plot with label
+plt.legend() # Adding legend to the box plot
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label
-plt.legend()
+plt.boxplot(x, label = ["python"], patch_artist = True) # Plotting the box plot with label and patch artist
+plt.legend() # Adding legend to the box plot
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection however use_line_collection is deprecated and will be removed in a future version
-plt.legend()
+
+plt.boxplot(x, label = ["python"], showmeans = True) # Plotting the box plot with label and patch artist and showing means
+plt.legend() # Adding legend to the box plot
 plt.show()
 
-plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python", orientation = "horizontal") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection and horizontal orientation
-plt.legend()
+x = [10,20,30,40,50,60,70,80,90,100,450]
+
+plt.boxplot(x, label = ["python"], patch_artist = True) 
+plt.legend() # Adding legend to the box plot
 plt.show()
+
+plt.boxplot(x, label = ["python"], patch_artist = True, whis = 3.6) # Plotting the box plot with label and patch artist and setting the whisker length to 3.6, this will show the outliers as points beyond the whiskers
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+") # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+
+plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+
+x = [10,20,30,40,50,60,70,80,90,100,450]
+x1 = [10,20,30,40,50,60,70,80,90,100,500]
+plt.boxplot([x, x1], label = ["python", "python1"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
+plt.legend() # Adding legend to the box plot
+plt.show()
+
+# ---------------------------------------------------------------
+#  STEM PLOT
+# ---------------------------------------------------------------
+
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.stem(x, y)
+# plt.show()
+
+
+
+
+# ---------------------------------------------------------------
+#  STEM PLOT
+# ---------------------------------------------------------------
+
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.stem(x, y)
+# plt.show()
