@@ -426,79 +426,143 @@ import matplotlib.pyplot as plt
 # plt.boxplot(x)
 # plt.show()
 
-x = [10,20,30,40,50,60,70,80,90,100]
+# x = [10,20,30,40,50,60,70,80,90,100]
 
-plt.boxplot(x) # Plotting the box plot with default settings
-plt.show()
+# plt.boxplot(x) # Plotting the box plot with default settings
+# plt.show()
 
-plt.boxplot(x, notch = True) # Plotting the box plot with notch, notch will show the confidence interval of the median
-plt.show()
+# plt.boxplot(x, notch = True) # Plotting the box plot with notch, notch will show the confidence interval of the median
+# plt.show()
 
-plt.boxplot(x, vert = False) # Plotting the box plot with horizontal orientation, by default vertical
-plt.show()
+# plt.boxplot(x, vert = False) # Plotting the box plot with horizontal orientation, by default vertical
+# plt.show()
 
-plt.boxplot(x, widths = 0.8) # Plotting the box width with different width (default = 0.2)
-plt.show()
+# plt.boxplot(x, widths = 0.8) # Plotting the box width with different width (default = 0.2)
+# plt.show()
 
-plt.boxplot(x, label = ["python"]) # Plotting the box plot with label
-plt.legend() # Adding legend to the box plot
-plt.show()
+# plt.boxplot(x, label = ["python"]) # Plotting the box plot with label
+# plt.legend() # Adding legend to the box plot
+# plt.show()
 
-plt.boxplot(x, label = ["python"], patch_artist = True) # Plotting the box plot with label and patch artist
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-
-plt.boxplot(x, label = ["python"], showmeans = True) # Plotting the box plot with label and patch artist and showing means
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-x = [10,20,30,40,50,60,70,80,90,100,450]
-
-plt.boxplot(x, label = ["python"], patch_artist = True) 
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-plt.boxplot(x, label = ["python"], patch_artist = True, whis = 3.6) # Plotting the box plot with label and patch artist and setting the whisker length to 3.6, this will show the outliers as points beyond the whiskers
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+") # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue
-plt.legend() # Adding legend to the box plot
-plt.show()
-
-plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red
-plt.legend() # Adding legend to the box plot
-plt.show()
+# plt.boxplot(x, label = ["python"], patch_artist = True) # Plotting the box plot with label and patch artist
+# plt.legend() # Adding legend to the box plot
+# plt.show()
 
 
-plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
-plt.legend() # Adding legend to the box plot
-plt.show()
+# plt.boxplot(x, label = ["python"], showmeans = True) # Plotting the box plot with label and patch artist and showing means
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+# x = [10,20,30,40,50,60,70,80,90,100,450]
+
+# plt.boxplot(x, label = ["python"], patch_artist = True) 
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+# plt.boxplot(x, label = ["python"], patch_artist = True, whis = 3.6) # Plotting the box plot with label and patch artist and setting the whisker length to 3.6, this will show the outliers as points beyond the whiskers
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+# plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+") # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+# plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+# plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red
+# plt.legend() # Adding legend to the box plot
+# plt.show()
 
 
-x = [10,20,30,40,50,60,70,80,90,100,450]
-x1 = [10,20,30,40,50,60,70,80,90,100,500]
-plt.boxplot([x, x1], label = ["python", "python1"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
-plt.legend() # Adding legend to the box plot
-plt.show()
+# plt.boxplot(x, label = ["python"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
+# plt.legend() # Adding legend to the box plot
+# plt.show()
+
+
+# x = [10,20,30,40,50,60,70,80,90,100,450]
+# x1 = [10,20,30,40,50,60,70,80,90,100,500]
+# plt.boxplot([x, x1], label = ["python", "python1"], patch_artist = True, showmeans = True, sym = "g+", boxprops = dict(color = "r"), capprops = dict(color = "b"), whiskerprops = dict(color = "r"), flierprops = dict(markeredgecolor = "y")) # Plotting the box plot with label and patch artist and showing means and changing the symbol for outliers to green plus and changing the color of the box to red and the color of the caps to blue and changing the color of the whiskers to red and changing the color of the outliers to yellow
+# plt.legend() # Adding legend to the box plot
+# plt.show()
 
 # ---------------------------------------------------------------
-#  STEM PLOT
+#  STACK/AREA PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
 # x = []
 # y = []
-# plt.stem(x, y)
+#... = []
+# plt.stackplot(x, y, ..)  minimum two parameters
 # plt.show()
 
+# SINGLE STACKED PLOT
 
+x = [1,2,3,4,5]
+area = [2,6,4,5,4]
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.stackplot(x, area) # Plotting the stack plot with default color and alpha
+plt.show()
+
+
+# MULTI STACKED PLOT
+
+x = [1,2,3,4,5]
+area = [2,6,4,5,4]
+area1 = [4,1,6,8,2]
+area2 = [9,2,4,6,1]
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+
+plt.stackplot(x, area, area1, area2) # Plotting the stack plot with default color and alpha
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
+
+l = ["area1", "area2", "area3"]
+plt.stackplot(x, area, area1, area2, labels = l) # Plotting the stack plot with default color and alpha and adding labels
+plt.legend(loc = 2) # Adding legend to the stack plot
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
+
+c = ['r', 'g', 'y']
+
+plt.stackplot(x, area, area1, area2, labels = l, colors = c) # Plotting the stack plot with default color and alpha and adding labels and colors
+plt.legend(loc = 2) # Adding legend to the stack plot
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
+
+plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "zero") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline zero (default)
+plt.legend(loc = 2)
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
+
+plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "sym") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline sym
+plt.legend(loc = 2)
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
+
+plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "wiggle") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline wiggle
+plt.legend(loc = 2)
+plt.title("Area Chart", fontsize = 15)
+plt.xlabel("X-Axis", fontsize = 15)
+plt.ylabel("Y-Axis", fontsize = 15)
+plt.show()
 
 
 # ---------------------------------------------------------------
