@@ -501,77 +501,110 @@ import matplotlib.pyplot as plt
 
 # SINGLE STACKED PLOT
 
-x = [1,2,3,4,5]
-area = [2,6,4,5,4]
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.stackplot(x, area) # Plotting the stack plot with default color and alpha
-plt.show()
+# x = [1,2,3,4,5]
+# area = [2,6,4,5,4]
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.stackplot(x, area) # Plotting the stack plot with default color and alpha
+# plt.show()
 
 
 # MULTI STACKED PLOT
 
-x = [1,2,3,4,5]
-area = [2,6,4,5,4]
-area1 = [4,1,6,8,2]
-area2 = [9,2,4,6,1]
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
+# x = [1,2,3,4,5]
+# area = [2,6,4,5,4]
+# area1 = [4,1,6,8,2]
+# area2 = [9,2,4,6,1]
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
 
-plt.stackplot(x, area, area1, area2) # Plotting the stack plot with default color and alpha
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# plt.stackplot(x, area, area1, area2) # Plotting the stack plot with default color and alpha
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
-l = ["area1", "area2", "area3"]
-plt.stackplot(x, area, area1, area2, labels = l) # Plotting the stack plot with default color and alpha and adding labels
-plt.legend(loc = 2) # Adding legend to the stack plot
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# l = ["area1", "area2", "area3"]
+# plt.stackplot(x, area, area1, area2, labels = l) # Plotting the stack plot with default color and alpha and adding labels
+# plt.legend(loc = 2) # Adding legend to the stack plot
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
-c = ['r', 'g', 'y']
+# c = ['r', 'g', 'y']
 
-plt.stackplot(x, area, area1, area2, labels = l, colors = c) # Plotting the stack plot with default color and alpha and adding labels and colors
-plt.legend(loc = 2) # Adding legend to the stack plot
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# plt.stackplot(x, area, area1, area2, labels = l, colors = c) # Plotting the stack plot with default color and alpha and adding labels and colors
+# plt.legend(loc = 2) # Adding legend to the stack plot
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
-plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "zero") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline zero (default)
-plt.legend(loc = 2)
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "zero") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline zero (default)
+# plt.legend(loc = 2)
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
-plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "sym") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline sym
-plt.legend(loc = 2)
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "sym") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline sym
+# plt.legend(loc = 2)
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
-plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "wiggle") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline wiggle
-plt.legend(loc = 2)
-plt.title("Area Chart", fontsize = 15)
-plt.xlabel("X-Axis", fontsize = 15)
-plt.ylabel("Y-Axis", fontsize = 15)
-plt.show()
+# plt.stackplot(x, area, area1, area2, labels = l, colors = c, baseline = "wiggle") # Plotting the stack plot with default color and alpha and adding labels and colors and baseline wiggle
+# plt.legend(loc = 2)
+# plt.title("Area Chart", fontsize = 15)
+# plt.xlabel("X-Axis", fontsize = 15)
+# plt.ylabel("Y-Axis", fontsize = 15)
+# plt.show()
 
 
 # ---------------------------------------------------------------
-#  STEM PLOT
+#  STEP PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
 # x = []
 # y = []
-# plt.stem(x, y)
+# plt.step(x, y)
 # plt.show()
+
+
+
+# ---------------------------------------------------------------
+#  STEP PLOT
+# ---------------------------------------------------------------
+
+
+# SYNTAX:
+# x = []
+# y = []
+# plt.step(x, y)
+# plt.show()
+
+x = [1,2,3,4,5]
+y = [4,2,6,1,5]
+
+plt.step(x,y)  # Plotting a step graph connecting points with horizontal and vertical lines
+plt.show()
+
+plt.title("python")  # Adding a title to the graph
+plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+plt.step(x, y)  # Plotting a step graph
+plt.grid()  # Displaying grid lines on the graph
+plt.show()  # Displaying the graph
+
+plt.title("python")  # Adding a title to the graph
+plt.xlabel("X - Axis", fontsize=15)  # Setting the X-axis label and font size
+plt.ylabel("Y - Axis", fontsize=15)  # Setting the Y-axis label and font size
+plt.step(x, y, color='r', marker='o', ms=10, mfc='g', label='python')  # Plotting a red step graph with circle markers, marker size 10, green marker face color, and a label
+plt.legend(loc = 2)
+plt.show()
