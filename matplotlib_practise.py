@@ -292,95 +292,125 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-x = [10,20,30,40]
-y = ["python", "c", "c++", "java"]
-ex = [0.0, 0.2, 0.0, 0.0] # explode will separate the slices of the pie chart, this is bydefault 0.0 for all slices
-c = ['r', 'g', 'b', 'y']
-plt.title("Pie Chart", fontsize = 15) # Adding title to the pie chart
+# x = [10,20,30,40]
+# y = ["python", "c", "c++", "java"]
+# ex = [0.0, 0.2, 0.0, 0.0] # explode will separate the slices of the pie chart, this is bydefault 0.0 for all slices
+# c = ['r', 'g', 'b', 'y']
+# plt.title("Pie Chart", fontsize = 15) # Adding title to the pie chart
 
-plt.pie(x) # Plotting basic pie chart
-plt.show()
+# plt.pie(x) # Plotting basic pie chart
+# plt.show()
 
 
-plt.pie(x, labels = y) # Plotting pie chart with labels
-plt.show()
+# plt.pie(x, labels = y) # Plotting pie chart with labels
+# plt.show()
 
-plt.pie(x, labels = y, colors = c, explode = ex) # Plotting labels with colors and explode
-plt.show()
+# plt.pie(x, labels = y, colors = c, explode = ex) # Plotting labels with colors and explode
+# plt.show()
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%") # Plotting pie chart with labels and percentage
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%") # Plotting pie chart with labels and percentage
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True) # Plotting pie chart with labels and percentage and shadow
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True) # Plotting pie chart with labels and percentage and shadow
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1) # Plotting pie chart with labels and percentage and shadow and bigger radius
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1) # Plotting pie chart with labels and percentage and shadow and bigger radius
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90) # Plotting pie chart with labels and percentage and shadow and start angle and label distance
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
-plt.show() 
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise
+# plt.show() 
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3)) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center
-plt.show()
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3)) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center
+# plt.show()
 
-plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3), rotatelabels = True) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center and rotate labels
-plt.legend(loc = 2) # Adding legend to the pie chart, loc = 2 will place the legend at the upper left corner, Quadrant based 1,2,3,4
-plt.show()
+# plt.pie(x, labels = y, colors = c, explode = ex, autopct = "%1.1f%%", shadow = True, radius = 1, labeldistance = 1.1, startangle = 90, textprops = {'fontsize': 10}, counterclock = False, wedgeprops = {'linewidth': 2, 'edgecolor': 'white'}, center = (2,3), rotatelabels = True) # Plotting pie chart with labels and percentage and shadow and start angle and label distance and bigger font size and counterclockwise and bigger wedge width and edge color and center and rotate labels
+# plt.legend(loc = 2) # Adding legend to the pie chart, loc = 2 will place the legend at the upper left corner, Quadrant based 1,2,3,4
+# plt.show()
 
 
 # DOT PIE CHART
 
-plt.pie([1]) 
-plt.show()
+# plt.pie([1]) 
+# plt.show()
 
 # DONUT PIE CHART 
 
 
-x = [10,20,30,40]
-x1 = [40,30,20,10]
-y = ["python", "c", "c++", "java"]
-c = ['r', 'g', 'b', 'y']
-plt.title("Pie Chart", fontsize = 15)
+# x = [10,20,30,40]
+# x1 = [40,30,20,10]
+# y = ["python", "c", "c++", "java"]
+# c = ['r', 'g', 'b', 'y']
+# plt.title("Pie Chart", fontsize = 15)
 
-plt.pie(x, labels = y, radius = 1.5)
-plt.pie(x1, radius = 0.5, colors = c)
-plt.show()
+# plt.pie(x, labels = y, radius = 1.5)
+# plt.pie(x1, radius = 0.5, colors = c)
+# plt.show()
 
 
-plt.pie(x, labels = y, radius = 1.5)
-plt.pie([1], colors = 'w') # Adding a white circle in the middle to create a donut chart ,instead of radius we can do [1] in the start of code
-plt.show()
+# plt.pie(x, labels = y, radius = 1.5)
+# plt.pie([1], colors = 'w') # Adding a white circle in the middle to create a donut chart ,instead of radius we can do [1] in the start of code
+# plt.show()
 
 
 # SECOND METHOD FOR DONUT
 
 
-plt.pie(x, labels = y, radius = 1.5)
-cr = plt.Circle((0,0), 0.5, facecolor = "white") # Creating a white circle with radius 0.5
-plt.gca().add_artist(cr)
+# plt.pie(x, labels = y, radius = 1.5)
+# cr = plt.Circle((0,0), 0.5, facecolor = "white") # Creating a white circle with radius 0.5
+# plt.gca().add_artist(cr)
 
-plt.show()
+# plt.show()
 
 
 # ---------------------------------------------------------------
-#  PLOT
+#  STEM PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
 # x = []
 # y = []
-# plt.(x, y)
+# plt.stem(x, y)
 # plt.show()
+
+x = [1,2,3,4,5,6]
+y = [2,4,6,8,10,12]
+
+plt.stem(x, y) # Plotting the stem plot with default line style and marker
+plt.show()
+
+plt.stem(x, y, linefmt = ":") # Plotting the stem plot with dotted line 
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o") # Plotting the stem plot with dotted line and circle marker and symbol
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4) # Plotting the stem plot with dotted line and circle marker and symbol and bottom value)
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label
+plt.legend()
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection however use_line_collection is deprecated and will be removed in a future version
+plt.legend()
+plt.show()
+
+plt.stem(x, y, linefmt = ":", markerfmt = "o", bottom = 4, basefmt = "g", label = "python", orientation = "horizontal") # Plotting the stem plot with dotted line and circle marker and symbol and bottom value and base line color and label and use_line_collection and horizontal orientation
+plt.legend()
+plt.show()
