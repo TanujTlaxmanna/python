@@ -111,73 +111,103 @@ import matplotlib.pyplot as plt
 # plt.scatter(x, y)
 # plt.show()
 
-day = [1,2,3,4,5,6,7]
-no = [2,3,4,5,1,2,3]
-colors = ["r", "y", "g", "b", "m", "c", "k"]
-size = [200, 189, 254, 372, 265, 292, 390]
-plt.title("Scatter Plot", fontsize = 15)
-plt.xlabel("Days", fontsize = 15)
-plt.ylabel("Number", fontsize = 15)
+# day = [1,2,3,4,5,6,7]
+# no = [2,3,4,5,1,2,3]
+# colors = ["r", "y", "g", "b", "m", "c", "k"]
+# size = [200, 189, 254, 372, 265, 292, 390]
+# plt.title("Scatter Plot", fontsize = 15)
+# plt.xlabel("Days", fontsize = 15)
+# plt.ylabel("Number", fontsize = 15)
 
-plt.scatter(day, no)  # Plotting the graph with default color and size
-plt.show()
+# plt.scatter(day, no)  # Plotting the graph with default color and size
+# plt.show()
 
-plt.scatter(day, no, color = colors) # Plotting the graph with different colors for each point
-plt.show()
+# plt.scatter(day, no, color = colors) # Plotting the graph with different colors for each point
+# plt.show()
 
-plt.scatter(day, no, color = colors, s = size) # Plotting the graph with different colors and sizes for each point  
-plt.show()
+# plt.scatter(day, no, color = colors, s = size) # Plotting the graph with different colors and sizes for each point  
+# plt.show()
 
-plt.scatter(day, no, color = colors, s = size, alpha = 0.5) # Plotting the graph with different colors, sizes and transparency for each point
-plt.show()
+# plt.scatter(day, no, color = colors, s = size, alpha = 0.5) # Plotting the graph with different colors, sizes and transparency for each point
+# plt.show()
 
-plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*") # Plotting the graph with different markers
-plt.show()
+# plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*") # Plotting the graph with different markers
+# plt.show()
 
-plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*", edgecolor = "black") # Plotting the graph with different markers and edge color
-plt.show()
+# plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*", edgecolor = "black") # Plotting the graph with different markers and edge color
+# plt.show()
 
-plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth
-plt.show()
+# plt.scatter(day, no, color = colors, s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth
+# plt.show()
 
-colors = [10, 49, 30, 29, 56, 20, 30]
-plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth
-plt.colorbar() # Adding a color bar to the graph
-plt.show()
+# colors = [10, 49, 30, 29, 56, 20, 30]
+# plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth
+# plt.colorbar() # Adding a color bar to the graph
+# plt.show()
 
-plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth, we use c to pass numeric colors instead of color
-t = plt.colorbar() # Adding a color bar to the graph
-t.set_label("Color Bar", fontsize = 15) # Adding a label to the color bar and fontsize
-plt.show()
+# plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, marker = "*", edgecolor = "black", linewidths = 2) # Plotting the graph with bigger edgewidth, we use c to pass numeric colors instead of color
+# t = plt.colorbar() # Adding a color bar to the graph
+# t.set_label("Color Bar", fontsize = 15) # Adding a label to the color bar and fontsize
+# plt.show()
 
 
 # MULTIPLE SCATTER PLOTS 
-day = [1,2,3,4,5,6,7]
-no = [2,3,4,5,1,2,3]
-no2 = [3,4,5,6,7,8,9]
-colors = [10, 49, 30, 29, 56, 20, 30]
-size = [200, 189, 254, 372, 265, 292, 390]
-plt.title("Scatter Plot", fontsize = 15)
-plt.xlabel("Days", fontsize = 15)
-plt.ylabel("Number", fontsize = 15)
+# day = [1,2,3,4,5,6,7]
+# no = [2,3,4,5,1,2,3]
+# no2 = [3,4,5,6,7,8,9]
+# colors = [10, 49, 30, 29, 56, 20, 30]
+# size = [200, 189, 254, 372, 265, 292, 390]
+# plt.title("Scatter Plot", fontsize = 15)
+# plt.xlabel("Days", fontsize = 15)
+# plt.ylabel("Number", fontsize = 15)
 
-plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, edgecolor = "black", linewidths = 2)
-plt.scatter(day, no2, color = "r", s = size, alpha = 0.5, edgecolor = "black", linewidths = 2)
-plt.show()
+# plt.scatter(day, no, c = colors, cmap = "viridis", s = size, alpha = 0.5, edgecolor = "black", linewidths = 2)
+# plt.scatter(day, no2, color = "r", s = size, alpha = 0.5, edgecolor = "black", linewidths = 2)
+# plt.show()
 
 # ---------------------------------------------------------------
-#  PLOT
+#  LINE PLOT
 # ---------------------------------------------------------------
 
 
 # SYNTAX:
-# x = []
 # y = []
-# plt.(x, y)
+# plt.plot(y)
 # plt.show()
 
+import numpy as np
+
+# x = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
+y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
+# plt.plot(x)
+plt.plot(y)  # Plotting graph with default color and line style
+plt.show()
+
+plt.plot(y, color = "red") # Plotting graph with red line
+plt.show()
+
+plt.plot(y, color = "red", linestyle = "dashed") # Plotting graph with red dashed line
+plt.show()
+
+plt.plot(y, color = "red", linestyle = "dashed", linewidth = 5) # Plotting graph with red dashed line and bigger line width 
+plt.show()
+
+plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10) # Plotting graph with red dashed line and bigger line width and markers
+plt.show()
+
+plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5) # Plotting graph with red dashed line and bigger line width and markers and transparency
+plt.show()
 
 
+# MULTIPLE LINE GRAPHS
+
+y = np.array([1,2,3,4,5,2,8,9,3,6,1,9,4,9])
+y1 = np.array([3,8,7,4,5,7,0,9,1,2,3,4,7,4])
+
+plt.plot(y, color = "red", linestyle = "dashed", linewidth = 2, marker = "o", markerfacecolor = "blue", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 1") # Plotting graph with red dashed line and bigger line width and markers and transparency
+plt.plot(y1, color = "green", linestyle = "solid", linewidth = 2, marker = "s", markerfacecolor = "yellow", markeredgecolor = "black", markersize = 10, alpha = 0.5, label = "Line 2") # Plotting graph with green solid line and bigger line width and markers and transparency
+plt.legend(["women", "men"]) # Adding legend to the graph
+plt.show()
 
 # ---------------------------------------------------------------
 #  PLOT
