@@ -6,7 +6,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-df = pd.read_csv("Machine_Learning\insurance.csv")
+df = pd.read_csv("csv's\insurance.csv")
 # print(df)
 
 

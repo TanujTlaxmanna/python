@@ -15,7 +15,7 @@ warnings.filterwarnings('ignore')
 # Load Dataset
 # ==========================================
 
-df = pd.read_csv("heart.csv")
+df = pd.read_csv("csv's\heart.csv")
 
 print(df.head())
 print(df.shape)
