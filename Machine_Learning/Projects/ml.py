@@ -58,7 +58,6 @@ from mlxtend.plotting import plot_decision_regions
 plot_decision_regions(X_train, y_train.values, clf = clf, legend = 2) # Here we turn y train values into numpy arrays, however we have already put x_train in numpy array so we dont have to turn it into numpy array
 plt.show()
 
-
 import pickle # Import the pickle module to save and load Python objects
 
 pickle.dump(clf, open('Machine_Learning\Models\model.pkl', 'wb'))# Save the trained machine learning model (clf) into a file named 'model.pkl',  'wb' stands for Write Binary mode, which is required for saving pickle files
