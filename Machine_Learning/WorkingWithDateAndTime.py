@@ -7,8 +7,8 @@ import datetime
 # Dataset Paths
 # ==========================================
 
-ORDERS_PATH = "csv/orders.csv"
-MESSAGES_PATH = "csv/messages.csv"
+ORDERS_PATH = "csv's/orders.csv"
+MESSAGES_PATH = "csv's/messages.csv"
 
 # ==========================================
 # Load Datasets
@@ -98,13 +98,14 @@ today = datetime.datetime.today()
 print("\nDays Passed")
 print((today - date["date"]).dt.days.head())
 
-print("\nMonths Passed")
-print(
-    np.round(
-        (today - date["date"]) / np.timedelta64(1, "M"),
-        0
-    ).head()
+# Months Passed
+months_passed = (
+    (today.year - date["date"].dt.year) * 12
+    + (today.month - date["date"].dt.month)
 )
+
+print("\nMonths Passed")
+print(months_passed.head())
 
 # ==========================================
 # Working with Date-Time
