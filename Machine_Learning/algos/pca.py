@@ -125,6 +125,7 @@ ax.set_xlabel("Feature 1")
 ax.set_ylabel("Feature 2")
 ax.set_zlabel("Feature 3")
 
+
 plt.title("Eigenvectors")
 plt.show()
 
