@@ -22,7 +22,7 @@ r2_score(y_test,y_pred)
 print(X_train.shape)
 
 
-class GDRegressor:
+class SGDRegressor:
     
     def __init__(self,learning_rate=0.01,epochs=100):
         
@@ -37,21 +37,25 @@ class GDRegressor:
         self.coef_ = np.ones(X_train.shape[1])
         
         for i in range(self.epochs):
-            # update all the coef and the intercept
-            y_hat = np.dot(X_train,self.coef_) + self.intercept_
-            #print("Shape of y_hat",y_hat.shape)
-            intercept_der = -2 * np.mean(y_train - y_hat)
-            self.intercept_ = self.intercept_ - (self.lr * intercept_der)
-            
-            coef_der = -2 * np.dot((y_train - y_hat),X_train)/X_train.shape[0]
-            self.coef_ = self.coef_ - (self.lr * coef_der)
+            for j in range(X_train.shape[0]):
+                idx = np.random.randint(0, X_train.shape[0])
+                y_hat = np.dot(X_train[idx],self.coef_) + self.intercept_
+                intercept_der = -2 * (y_train[idx] - y_hat)
+                self.intercept_ = self.intercept_ - (self.lr * intercept_der)
+
+                coef_der = -2 * np.dot((y_train[idx] - y_hat),X_train[idx])
+                self.coef_ = self.coef_ - (self.lr * coef_der)
+                        
+
         
         print(self.intercept_,self.coef_)
     
     def predict(self,X_test):
         return np.dot(X_test,self.coef_) + self.intercept_
-gdr = GDRegressor(epochs=1000,learning_rate=0.5)
-gdr.fit(X_train,y_train)
 
-y_pred = gdr.predict(X_test)
+
+sgdr = SGDRegressor(epochs=50,learning_rate=0.01)
+sgdr.fit(X_train,y_train)
+
+y_pred = sgdr.predict(X_test)
 print(r2_score(y_test,y_pred))
